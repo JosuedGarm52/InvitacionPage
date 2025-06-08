@@ -2,7 +2,7 @@
 const claveSecretaInvitados = 'MiSuperClaveSecreta2025!';
 
 // Función para cargar el archivo encriptado y devolver un objeto JS
-export async function cargarInvitados() {
+async function cargarInvitados() {
     try {
         // Cargamos el archivo bbss como texto
         const response = await fetch('./data/invitados.bbss');
@@ -22,3 +22,11 @@ export async function cargarInvitados() {
         return null;
     }
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const invitados = await cargarInvitados();
+    if (invitados) {
+        console.log("Lista de invitados:", invitados);
+
+    }
+});
