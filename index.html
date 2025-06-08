@@ -4,10 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INVITACION</title>
+    <link rel="icon" href="./resources/invitacion.png" type="image/png">
     <link rel="stylesheet" href="./resources/index.css">
 </head>
 <body>
-    
-    <script src="./resources/index.js"></script>
+    <div class="invitation">
+        <p>El evento comienza en:</p>
+        <div id="countdown-container">
+        <div id="countdown">
+            <div class="flip-unit">
+            <div class="label">Días</div>
+            <div class="flip-card" id="days">00</div>
+            </div>
+            <div class="flip-unit">
+            <div class="label">Horas</div>
+            <div class="flip-card" id="hours">00</div>
+            </div>
+            <div class="flip-unit">
+            <div class="label">Minutos</div>
+            <div class="flip-card" id="minutes">00</div>
+            </div>
+            <div class="flip-unit">
+            <div class="label">Segundos</div>
+            <div class="flip-card" id="seconds">
+                <div class="static">00</div>
+                <div class="animated">00</div>
+            </div>
+            </div>
+        </div>
+        <div id="message"></div>
+        </div>
+    </div>
+
+    <script src="./resources/cronoTimer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+    <script src="./resources/controlArchivos.js"></script>
+
+    <div class="invisible-link">
+        <a href="https://www.flaticon.es/iconos-gratis/estrella" title="estrella iconos">Estrella iconos creados por berkahicon - Flaticon</a>
+    </div>
 </body>
 </html>

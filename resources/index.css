@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  text-align: center;
+  padding: 40px;
+}
+
+.invisible-link {
+  display: none;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.invitation p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+#countdown-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 20px 0;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.flip-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Días, horas y minutos */
+.flip-card {
+  background: #222;
+  color: #fff;
+  font-size: 2rem;
+  padding: 15px 20px;
+  border-radius: 10px;
+  perspective: 1000px;
+  min-width: 60px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flip normal */
+.flip-card.flip {
+  transform: rotateX(180deg);
+}
+
+/* SEGUNDOS ESPECIAL */
+#seconds {
+  position: relative;
+  background: #222;
+  color: #fff;
+  font-size: 2rem;
+  padding: 15px 20px;
+  border-radius: 10px;
+  min-width: 60px;
+  height: 38px;
+  overflow: hidden;
+}
+
+#seconds .static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  line-height: 60px;
+}
+
+#seconds .animated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  line-height: 60px;
+  transform: translateY(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#seconds .animated.slide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
