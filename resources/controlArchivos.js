@@ -50,9 +50,9 @@ async function cargarInvitados() {
 }
 
 function obtenerPnumberDesdeURL() {
-    const partes = window.location.pathname.split('/');
-    const posibleNumero = partes[partes.length - 1];
-    return /^\d+$/.test(posibleNumero) ? parseInt(posibleNumero) : null;
+    const hash = window.location.hash;
+    const posibleNumero = hash.replace('#', '');
+    return /^\d+$/.test(posibleNumero) ? posibleNumero : null;
 }
 
 // Ejecuta la función al cargar la página
