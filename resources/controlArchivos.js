@@ -33,6 +33,7 @@ async function cargarInvitados() {
       //console.log('🎉 Invitados desencriptados:', invitados);
 
       const pnumberBuscado = obtenerPnumberDesdeURL();
+      console.log("number: ", pnumberBuscado);
 
       const invitadoValido = objInvitados.invitados.find(inv => inv.pnumber === pnumberBuscado);
 
