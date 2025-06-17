@@ -26,7 +26,7 @@ async function cargarInvitados() {
 
       // Desencriptar XOR con la clave
       const textoDesencriptado = xorDecrypt(cifrado, claveSecretaInvitados);
-      //console.log("🔓 Texto desencriptado:", textoDesencriptado.slice(0, 100), "...");
+      console.log("🔓 Texto desencriptado");
 
       // Parsear JSON
       objInvitados = JSON.parse(textoDesencriptado);
