@@ -35,7 +35,10 @@ async function cargarInvitados() {
       const pnumberBuscado = obtenerPnumberDesdeURL();
       console.log("number: ", pnumberBuscado);
 
-      const invitadoValido = objInvitados.invitados.find(inv => inv.pnumber === pnumberBuscado);
+      const invitadoValido = objInvitados.invitados.find(inv => Number(inv.pnumber) === Number(pnumberBuscado));
+
+      console.log("🔍 Buscando pnumber:", pnumberBuscado, typeof pnumberBuscado);
+      console.log("📋 Lista de invitados:", objInvitados.invitados.map(i => i.pnumber));
 
       if (invitadoValido) {
         console.log("🎉 Invitado encontrado:", invitadoValido);
