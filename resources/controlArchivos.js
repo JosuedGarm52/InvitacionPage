@@ -56,4 +56,4 @@ function obtenerPnumberDesdeURL() {
 }
 
 // Ejecuta la función al cargar la página
-
+cargarInvitados();
