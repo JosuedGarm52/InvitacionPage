@@ -33,18 +33,15 @@ async function cargarInvitados() {
       //console.log('🎉 Invitados desencriptados:', invitados);
 
       const pnumberBuscado = obtenerPnumberDesdeURL();
-      console.log("number: ", pnumberBuscado);
+      //console.log("number: ", pnumberBuscado);
 
       const invitadoValido = objInvitados.invitados.find(inv => Number(inv.pnumber) === Number(pnumberBuscado));
 
-      console.log("🔍 Buscando pnumber:", pnumberBuscado, typeof pnumberBuscado);
-      console.log("📋 Lista de invitados:", objInvitados.invitados.map(i => i.pnumber));
-
       if (invitadoValido) {
-        console.log("🎉 Invitado encontrado:", invitadoValido);
+        //console.log("🎉 Invitado encontrado:", invitadoValido);
         document.getElementById('con-invitacion').classList.remove('d-none');
       } else {
-        console.warn("❌ No se encontró un invitado con ese pnumber.");
+        //console.warn("❌ No se encontró un invitado con ese pnumber.");
         document.getElementById('sin-invitacion').classList.remove('d-none');
       }
     } catch (error) {
