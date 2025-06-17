@@ -1,5 +1,6 @@
 // js/controlArchivos.js
 const claveSecretaInvitados = 'MiSuperClaveSecreta2025!';
+let objInvitados;
 
 function xorDecrypt(data, key) {
   let result = '';
@@ -18,28 +19,41 @@ async function cargarInvitados() {
       if (!response.ok) throw new Error('No se pudo cargar el archivo: ' + response.status);
       
       const base64Texto = await response.text();
-      console.log("📥 Archivo encriptado cargado:", base64Texto.slice(0, 100), "...");
+      //console.log("📥 Archivo encriptado cargado:", base64Texto.slice(0, 100), "...");
 
       // Decodificar base64
       const cifrado = atob(base64Texto);
 
       // Desencriptar XOR con la clave
       const textoDesencriptado = xorDecrypt(cifrado, claveSecretaInvitados);
-      console.log("🔓 Texto desencriptado:", textoDesencriptado.slice(0, 100), "...");
+      //console.log("🔓 Texto desencriptado:", textoDesencriptado.slice(0, 100), "...");
 
       // Parsear JSON
-      const invitados = JSON.parse(textoDesencriptado);
-      console.log('🎉 Invitados desencriptados:', invitados);
+      objInvitados = JSON.parse(textoDesencriptado);
+      //console.log('🎉 Invitados desencriptados:', invitados);
 
-      const invitadosDiv = document.getElementById('invitados');
-      invitadosDiv.innerHTML = invitados.invitados.map(inv => `<p>${inv.nombre}</p>`).join('');
+      const pnumberBuscado = obtenerPnumberDesdeURL();
 
-      return invitados;
+      const invitadoValido = objInvitados.invitados.find(inv => inv.pnumber === pnumberBuscado);
+
+      if (invitadoValido) {
+        console.log("🎉 Invitado encontrado:", invitadoValido);
+        document.getElementById('con-invitacion').classList.remove('d-none');
+      } else {
+        console.warn("❌ No se encontró un invitado con ese pnumber.");
+        document.getElementById('sin-invitacion').classList.remove('d-none');
+      }
     } catch (error) {
       console.error('❌ Error cargando invitados:', error);
       return null;
     }
 }
 
+function obtenerPnumberDesdeURL() {
+    const partes = window.location.pathname.split('/');
+    const posibleNumero = partes[partes.length - 1];
+    return /^\d+$/.test(posibleNumero) ? parseInt(posibleNumero) : null;
+}
+
 // Ejecuta la función al cargar la página
-cargarInvitados();
+

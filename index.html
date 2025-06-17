@@ -6,38 +6,54 @@
     <title>INVITACION</title>
     <link rel="icon" href="./resources/invitacion.png" type="image/png">
     <link rel="stylesheet" href="./resources/index.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 </head>
 <body>
-    <div class="invitation">
-        <p>El evento comienza en:</p>
-        <div id="countdown-container">
-        <div id="countdown">
-            <div class="flip-unit">
-            <div class="label">Días</div>
-            <div class="flip-card" id="days">00</div>
+    <div id="sin-invitacion" class="d-none">
+        <h2 class="text-danger">😕 ¡Ups!</h2>
+        <p>No parece que tengas una invitación válida.</p>
+        <p>Por favor, contacta a los organizadores para obtener acceso.</p>
+    </div>
+
+    <div id="con-invitacion" class="d-none">
+        <div class="invitation">
+            <p>El evento comienza en:</p>
+            <div id="countdown-container">
+            <div id="countdown">
+                <div class="flip-unit">
+                <div class="label">Días</div>
+                <div class="flip-card" id="days">00</div>
+                </div>
+                <div class="flip-unit">
+                <div class="label">Horas</div>
+                <div class="flip-card" id="hours">00</div>
+                </div>
+                <div class="flip-unit">
+                <div class="label">Minutos</div>
+                <div class="flip-card" id="minutes">00</div>
+                </div>
+                <div class="flip-unit">
+                <div class="label">Segundos</div>
+                <div class="flip-card" id="seconds">
+                    <div class="static">00</div>
+                    <div class="animated">00</div>
+                </div>
+                </div>
             </div>
-            <div class="flip-unit">
-            <div class="label">Horas</div>
-            <div class="flip-card" id="hours">00</div>
+            <div id="message"></div>
             </div>
-            <div class="flip-unit">
-            <div class="label">Minutos</div>
-            <div class="flip-card" id="minutes">00</div>
-            </div>
-            <div class="flip-unit">
-            <div class="label">Segundos</div>
-            <div class="flip-card" id="seconds">
-                <div class="static">00</div>
-                <div class="animated">00</div>
-            </div>
-            </div>
-        </div>
-        <div id="message"></div>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="./resources/cronoTimer.js"></script>
     <script src="./resources/controlArchivos.js"></script>
+
+    <script src="./resources/main.js"></script>
 
     <div class="invisible-link">
         <a href="https://www.flaticon.es/iconos-gratis/estrella" title="estrella iconos">Estrella iconos creados por berkahicon - Flaticon</a>
