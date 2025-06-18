@@ -1,6 +1,5 @@
-// js/controlArchivos.js
 const claveSecretaInvitados = 'MiSuperClaveSecreta2025!';
-let objInvitados;
+let objInvitados = null;
 
 function xorDecrypt(data, key) {
   let result = '';
@@ -10,51 +9,52 @@ function xorDecrypt(data, key) {
   return result;
 }
 
-// Función para cargar el archivo encriptado y devolver un objeto JS
-async function cargarInvitados() {
-  console.log("Iniciando carga del archivo...");
-
-    try {
-      const response = await fetch('./data/invitados.bbss');
-      if (!response.ok) throw new Error('No se pudo cargar el archivo: ' + response.status);
-      
-      const base64Texto = await response.text();
-      //console.log("📥 Archivo encriptado cargado:", base64Texto.slice(0, 100), "...");
-
-      // Decodificar base64
-      const cifrado = atob(base64Texto);
-
-      // Desencriptar XOR con la clave
-      const textoDesencriptado = xorDecrypt(cifrado, claveSecretaInvitados);
-      console.log("🔓 Texto desencriptado");
-
-      // Parsear JSON
-      objInvitados = JSON.parse(textoDesencriptado);
-      //console.log('🎉 Invitados desencriptados:', invitados);
-
-      const pnumberBuscado = obtenerPnumberDesdeURL();
-      //console.log("number: ", pnumberBuscado);
-
-      const invitadoValido = objInvitados.invitados.find(inv => Number(inv.pnumber) === Number(pnumberBuscado));
-
-      if (invitadoValido) {
-        console.log("🎉 Invitado encontrado:", invitadoValido);
-        document.getElementById('con-invitacion').classList.remove('d-none');
-      } else {
-        console.warn("❌ No se encontró un invitado con ese pnumber.");
-        document.getElementById('sin-invitacion').classList.remove('d-none');
-      }
-    } catch (error) {
-      console.error('❌ Error cargando invitados:', error);
-      return null;
-    }
-}
-
 function obtenerPnumberDesdeURL() {
-    const hash = window.location.hash;
-    const posibleNumero = hash.replace('#', '');
-    return /^\d+$/.test(posibleNumero) ? posibleNumero : null;
+  const hash = window.location.hash;
+  const posibleNumero = hash.replace('#', '');
+  return /^\d+$/.test(posibleNumero) ? Number(posibleNumero) : null;
 }
 
-// Ejecuta la función al cargar la página
-//cargarInvitados();
+function validarInvitado() {
+  const pnumber = obtenerPnumberDesdeURL();
+  if (!objInvitados || !Array.isArray(objInvitados.invitados)) return null;
+
+  return objInvitados.invitados.find(inv => Number(inv.pnumber) === pnumber) || null;
+}
+
+function mostrarConInvitacion() {
+  document.getElementById('con-invitacion')?.classList.remove('d-none');
+}
+
+function mostrarSinInvitacion() {
+  document.getElementById('sin-invitacion')?.classList.remove('d-none');
+}
+
+// Esta función actualiza el objeto objInvitados y vuelve a validar
+async function actualizarInvitados() {
+  console.log("🔄 Cargando archivo de invitados...");
+
+  try {
+    const response = await fetch('./data/invitados.bbss');
+    if (!response.ok) throw new Error('No se pudo cargar el archivo: ' + response.status);
+
+    const base64Texto = await response.text();
+    const cifrado = atob(base64Texto);
+    const textoDesencriptado = xorDecrypt(cifrado, claveSecretaInvitados);
+
+    objInvitados = JSON.parse(textoDesencriptado);
+    console.log("✅ Invitados actualizados.");
+
+    const invitado = validarInvitado();
+    if (invitado) {
+      console.log("🎉 Invitado válido encontrado tras actualización:", invitado);
+      mostrarConInvitacion();
+    } else {
+      console.warn("❌ No se encontró invitado tras actualización.");
+      mostrarSinInvitacion();
+    }
+
+  } catch (error) {
+    console.error('❌ Error al actualizar invitados:', error);
+  }
+}

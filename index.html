@@ -55,7 +55,18 @@
 
     <script src="./resources/cronoTimer.js"></script>
     <script src="./resources/controlArchivos.js"></script>
+    <script>
+        window.onload = async () => {
+            await actualizarInvitados(); // Espera que se cargue objInvitados
 
+            const invitado = validarInvitado();
+            if (invitado) {
+            mostrarConInvitacion();
+            } else {
+            mostrarSinInvitacion();
+            }
+        };
+    </script>
     <script src="./resources/main.js"></script>
 
     <div class="invisible-link">
