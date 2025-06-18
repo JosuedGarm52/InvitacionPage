@@ -38,10 +38,10 @@ async function cargarInvitados() {
       const invitadoValido = objInvitados.invitados.find(inv => Number(inv.pnumber) === Number(pnumberBuscado));
 
       if (invitadoValido) {
-        //console.log("🎉 Invitado encontrado:", invitadoValido);
+        console.log("🎉 Invitado encontrado:", invitadoValido);
         document.getElementById('con-invitacion').classList.remove('d-none');
       } else {
-        //console.warn("❌ No se encontró un invitado con ese pnumber.");
+        console.warn("❌ No se encontró un invitado con ese pnumber.");
         document.getElementById('sin-invitacion').classList.remove('d-none');
       }
     } catch (error) {
@@ -57,4 +57,4 @@ function obtenerPnumberDesdeURL() {
 }
 
 // Ejecuta la función al cargar la página
-cargarInvitados();
+//cargarInvitados();
