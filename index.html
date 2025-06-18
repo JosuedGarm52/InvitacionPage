@@ -12,7 +12,7 @@
     >
 </head>
 <body>
-    <div class="container">
+    <div class="contenedor">
         <div id="sin-invitacion" class="d-none" style="text-align: center;">
             <h2 class="text-danger">😕 ¡Ups!</h2>
             <p>No parece que tengas una invitación válida.</p>
@@ -60,7 +60,7 @@
         window.onload = async () => {
             console.log("✅ Página cargada");
 
-             const esLocal = window.location.protocol === "file:";
+            const esLocal = window.location.protocol === "file:";
 
             if (esLocal) {
                 console.warn("⚠️ Modo local detectado. Saltando validación de invitado.");
