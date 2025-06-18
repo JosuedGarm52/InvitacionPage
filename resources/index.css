@@ -133,82 +133,10 @@ Seccion Div general de invitacion
   background: #fff;
   position: relative;
   overflow: hidden;
-}
 
-/* Líneas estilo cuaderno en todos los lados */
-#con-invitacion::before,
-#con-invitacion::after,
-#con-invitacion::backdrop-left,
-#con-invitacion::backdrop-right {
-  content: '';
-  position: absolute;
-  background: repeating-linear-gradient(
-    to right,
-    #ccc 0px,
-    #ccc 1px,
-    transparent 1px,
-    transparent 2px,
-    #333 2px,
-    #333 4px,
-    transparent 4px,
-    transparent 5px,
-    #ccc 5px,
-    #ccc 6px
-  );
-  z-index: 1;
-}
-
-#con-invitacion::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-}
-
-#con-invitacion::after {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-}
-
-#con-invitacion::backdrop-left,
-#con-invitacion::backdrop-right {
-  top: 0;
-  bottom: 0;
-  width: 6px;
-}
-
-#con-invitacion::backdrop-left {
-  left: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    #ccc 0px,
-    #ccc 1px,
-    transparent 1px,
-    transparent 2px,
-    #333 2px,
-    #333 4px,
-    transparent 4px,
-    transparent 5px,
-    #ccc 5px,
-    #ccc 6px
-  );
-}
-
-#con-invitacion::backdrop-right {
-  right: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    #ccc 0px,
-    #ccc 1px,
-    transparent 1px,
-    transparent 2px,
-    #333 2px,
-    #333 4px,
-    transparent 4px,
-    transparent 5px,
-    #ccc 5px,
-    #ccc 6px
-  );
+  /* Bordes múltiples simulados */
+  border: 1px solid #ccc;          /* línea delgada exterior */
+  outline: 3px solid #333;         /* línea gruesa intermedia */
+  outline-offset: -13px;            /* desplaza la línea gruesa hacia adentro */
+  box-sizing: border-box;
 }
