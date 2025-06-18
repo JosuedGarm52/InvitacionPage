@@ -55,11 +55,17 @@
 
     <script src="./resources/cronoTimer.js"></script>
     <script src="./resources/controlArchivos.js"></script>
+    <script src="./resources/main.js"></script>
     <script>
         window.onload = async () => {
-            await actualizarInvitados(); // Espera que se cargue objInvitados
+            console.log("✅ Página cargada");
+
+            await actualizarInvitados(); // Espera la carga de objInvitados
+            console.log("📦 Invitados cargados:", objInvitados);
 
             const invitado = validarInvitado();
+            console.log("🔍 Invitado encontrado:", invitado);
+            
             if (invitado) {
             mostrarConInvitacion();
             } else {
@@ -67,7 +73,6 @@
             }
         };
     </script>
-    <script src="./resources/main.js"></script>
 
     <div class="invisible-link">
         <a href="https://www.flaticon.es/iconos-gratis/estrella" title="estrella iconos">Estrella iconos creados por berkahicon - Flaticon</a>
