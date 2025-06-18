@@ -60,12 +60,20 @@
         window.onload = async () => {
             console.log("✅ Página cargada");
 
+             const esLocal = window.location.protocol === "file:";
+
+            if (esLocal) {
+                console.warn("⚠️ Modo local detectado. Saltando validación de invitado.");
+                mostrarConInvitacion();
+                return;
+            }
+
             await actualizarInvitados(); // Espera la carga de objInvitados
             console.log("📦 Invitados cargados:", objInvitados);
 
             const invitado = validarInvitado();
             console.log("🔍 Invitado encontrado:", invitado);
-            
+
             if (invitado) {
             mostrarConInvitacion();
             } else {

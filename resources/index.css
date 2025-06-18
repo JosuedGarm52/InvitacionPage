@@ -103,3 +103,66 @@ h1 {
   transform: translateY(-100%);
   opacity: 0;
 }
+
+/*
+Seccion Div general de invitacion
+*/
+#con-invitacion {
+  position: relative;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Líneas tipo cuaderno en los laterales */
+#con-invitacion::before,
+#con-invitacion::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px; /* ancho total del grupo de líneas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+#con-invitacion::before {
+  left: 0;
+  background: repeating-linear-gradient(
+    to right,
+    #ccc 0px,
+    #ccc 1px,
+    transparent 1px,
+    transparent 2px,
+    #333 2px,
+    #333 4px,
+    transparent 4px,
+    transparent 5px,
+    #ccc 5px,
+    #ccc 6px
+  );
+}
+
+#con-invitacion::after {
+  right: 0;
+  background: repeating-linear-gradient(
+    to right,
+    #ccc 0px,
+    #ccc 1px,
+    transparent 1px,
+    transparent 2px,
+    #333 2px,
+    #333 4px,
+    transparent 4px,
+    transparent 5px,
+    #ccc 5px,
+    #ccc 6px
+  );
+}
