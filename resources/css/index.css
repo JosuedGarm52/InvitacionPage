@@ -187,3 +187,14 @@ Seccion Div general de invitacion
   user-select: none;
 }
 
+.flor-fondo-der {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 220px;      /* Ajusta el tamaño según necesites */
+  height: auto;
+  opacity: 0.48;     /* Transparencia */
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
