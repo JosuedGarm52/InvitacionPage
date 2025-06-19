@@ -1,4 +1,4 @@
-const targetDate = new Date("2025-12-31T23:59:59");
+const targetDate = new Date("2025-09-13T18:00:00");
 
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
