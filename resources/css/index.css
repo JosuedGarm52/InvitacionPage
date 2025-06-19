@@ -124,19 +124,66 @@ h1 {
 Seccion Div general de invitacion
 */
 #con-invitacion {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;     /* Centrado horizontal */
+  position: relative;
+  height: 100vh;
+  width: 100vw;
   padding: 40px 20px;
   background: #fff;
-  position: relative;
+  box-sizing: border-box;
   overflow: hidden;
 
-  /* Bordes múltiples simulados */
-  border: 1px solid #ccc;          /* línea delgada exterior */
-  outline: 3px solid #333;         /* línea gruesa intermedia */
-  outline-offset: -13px;            /* desplaza la línea gruesa hacia adentro */
-  box-sizing: border-box;
+  /* Bordes interiores: como hoja de cuaderno */
+  border: 1px solid #ccc;              /* delgada exterior */
+  outline: 3px solid #333;             /* gruesa intermedia */
+  outline-offset: -8px;                /* desplazada hacia adentro */
 }
+
+/* Líneas adicionales tipo cuaderno */
+.borde {
+  position: absolute;
+  background-color: #bbb;
+  z-index: 2;
+}
+
+/* Horizontales */
+.borde-top {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+}
+
+.borde-bottom {
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+}
+
+/* Verticales */
+.borde-left {
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 1px;
+}
+
+.borde-right {
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  width: 1px;
+}
+
+.flor-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;      /* Ajusta el tamaño según necesites */
+  height: auto;
+  opacity: 0.48;     /* Transparencia */
+  z-index: 1;        /* Debajo del contenido principal */
+  pointer-events: none; /* No bloquea clics */
+  user-select: none;
+}
+

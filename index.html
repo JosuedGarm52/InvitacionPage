@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INVITACION</title>
-    <link rel="icon" href="./resources/invitacion.png" type="image/png">
-    <link rel="stylesheet" href="./resources/index.css">
+    <link rel="icon" href="./resources/images/invitacion.png" type="image/png">
+    <link rel="stylesheet" href="./resources/css/index.css">
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -13,6 +13,7 @@
 </head>
 <body>
     <div class="contenedor">
+        <img src="./resources/images/flor_1.png" class="flor-fondo" alt="Flor decorativa">
         <div id="sin-invitacion" class="d-none" style="text-align: center;">
             <h2 class="text-danger">😕 ¡Ups!</h2>
             <p>No parece que tengas una invitación válida.</p>
@@ -20,6 +21,10 @@
         </div>
 
         <div id="con-invitacion" class="d-none" style="text-align: center;">
+            <div class="borde borde-top"></div>
+            <div class="borde borde-bottom"></div>
+            <div class="borde borde-left"></div>
+            <div class="borde borde-right"></div>
             <div class="invitation">
                 <p>El evento comienza en:</p>
                 <div id="countdown-container">
@@ -53,9 +58,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="./resources/cronoTimer.js"></script>
-    <script src="./resources/controlArchivos.js"></script>
-    <script src="./resources/main.js"></script>
+    <script src="./resources/js/cronoTimer.js"></script>
+    <script src="./resources/js/controlArchivos.js"></script>
+    <script src="./resources/js/main.js"></script>
     <script>
         window.onload = async () => {
             console.log("✅ Página cargada");
