@@ -1,9 +1,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;  /* <- evita scroll en body */
   background: #f0f0f0;
-  overflow: hidden; /* evita scroll si se desborda accidentalmente */
 }
 
 body {
@@ -11,14 +11,18 @@ body {
 }
 
 .contenedor {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.scroll-contenido {
   height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 24px;
 }
 
 .invisible-link {
@@ -123,56 +127,45 @@ h1 {
 /*
 Seccion Div general de invitacion
 */
-#con-invitacion {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  padding: 40px 20px;
+#con-invitacion,
+#sin-invitacion {
+  min-height: 100vh;    /* Ocupa al menos toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #fff;
   box-sizing: border-box;
-  overflow: hidden;
-
-  /* Bordes interiores: como hoja de cuaderno */
-  border: 1px solid #ccc;              /* delgada exterior */
-  outline: 3px solid #333;             /* gruesa intermedia */
-  outline-offset: -8px;                /* desplazada hacia adentro */
+  position: relative;
+  width: 100%;
+  padding: 40px 20px;
+  /* Mantén los bordes y outline si los necesitas */
 }
 
-/* Líneas adicionales tipo cuaderno */
-.borde {
-  position: absolute;
-  background-color: #bbb;
-  z-index: 2;
+/* Borde exterior: delgado y cerca del borde */
+.borde-pagina-externo {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  border: 0.5px solid #bbb;
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 999;
 }
 
-/* Horizontales */
-.borde-top {
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  height: 1px;
-}
-
-.borde-bottom {
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  height: 1px;
-}
-
-/* Verticales */
-.borde-left {
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  width: 1px;
-}
-
-.borde-right {
-  top: 10px;
-  bottom: 10px;
-  right: 10px;
-  width: 1px;
+/* Borde interior: más grueso y más separado */
+.borde-pagina-interno {
+  position: fixed;
+  top: 48px;
+  left: 48px;
+  right: 48px;
+  bottom: 48px;
+  border: 3px solid #bbb;
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: 1000;
 }
 
 .flor-fondo {
