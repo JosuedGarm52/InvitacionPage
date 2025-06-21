@@ -1,8 +1,14 @@
-html, body {
+:root {
+  --borde-grosor-first: 2px;
+  --borde-distancia-first: 5px;
+}
+
+
+body, html {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden;  /* <- evita scroll en body */
+  height: 100%;
+  overflow-x: hidden;
   background: #f0f0f0;
 }
 
@@ -10,19 +16,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.contenedor {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  background: transparent;
-}
-
-.scroll-contenido {
-  height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
-  padding: 24px;
+.contenido {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 32px;
+  background: white;
 }
 
 .invisible-link {
@@ -142,30 +141,42 @@ Seccion Div general de invitacion
   /* Mantén los bordes y outline si los necesitas */
 }
 
-/* Borde exterior: delgado y cerca del borde */
-.borde-pagina-externo {
+/*
+BORDES DE LINEAS
+*/
+.borde-superior,
+.borde-inferior,
+.borde-izquierdo,
+.borde-derecho {
   position: fixed;
-  top: 16px;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  border: 0.5px solid #bbb;
-  border-radius: 18px;
-  pointer-events: none;
-  z-index: 999;
+  background: #bbb;
+  z-index: 1; /* por debajo del contenido */
 }
 
-/* Borde interior: más grueso y más separado */
-.borde-pagina-interno {
-  position: fixed;
-  top: 48px;
-  left: 48px;
-  right: 48px;
-  bottom: 48px;
-  border: 3px solid #bbb;
-  border-radius: 28px;
-  pointer-events: none;
-  z-index: 1000;
+/* Líneas delgadas */
+.borde-superior {
+  top: var(--borde-distancia-first);
+  left: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  right: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  height: var(--borde-grosor-first);
+}
+.borde-inferior {
+  bottom: var(--borde-distancia-first);
+  left: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  right: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  height: var(--borde-grosor-first);
+}
+.borde-izquierdo {
+  top: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  bottom: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  left: var(--borde-distancia-first);
+  width: var(--borde-grosor-first);
+}
+.borde-derecho {
+  top: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  bottom: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
+  right: var(--borde-distancia-first);
+  width: var(--borde-grosor-first);
 }
 
 .flor-fondo {
