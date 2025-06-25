@@ -10,15 +10,10 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="borde-superior"></div>
-    <div class="borde-inferior"></div>
-    <div class="borde-izquierdo"></div>
-    <div class="borde-derecho"></div>
     <div class="contenedor">
-        <img src="./resources/images/flor_1.png" class="flor-fondo" alt="Flor decorativa">
-        <img src="./resources/images/flor_2.png" class="flor-fondo-der" alt="Flor decorativa inferior derecha">
         <div id="sin-invitacion" class="d-none" style="text-align: center;">
             <h2 class="text-danger">😕 ¡Ups!</h2>
             <p>No parece que tengas una invitación válida.</p>
@@ -26,49 +21,222 @@
         </div>
 
         <div id="con-invitacion" class="d-none" style="text-align: center;">
-            
-            <h1 class="titulo">¡Estás invitado!</h1>
-            <p class="subtitulo">Acompáñanos a celebrar un día muy especial</p>
-            <div class="invitation">
-                <p>El evento comienza en:</p>
-                <div id="countdown-container">
-                <div id="countdown">
-                    <div class="flip-unit">
-                    <div class="label">Días</div>
-                    <div class="flip-card" id="days">00</div>
+            <div id="invitacion" class="bg-cover bg-center py-10 px-4 max-w-4xl mx-auto">
+                <!-- Fondo decorativo superior -->
+                <div class="mb-4">
+                    <img src="decoracion1.png" alt="Decoración superior" class="mx-auto w-32">
+                </div>
+
+                <h1 class="text-4xl md:text-5xl text-center font-extrabold text-pink-700 mb-4">Nuestra Boda</h1>
+
+                <!-- Fondo decorativo inferior -->
+                <div class="mb-6">
+                    <img src="decoracion2.png" alt="Decoración inferior" class="mx-auto w-28">
+                </div>
+
+                <!-- Nombres -->
+                <div class="text-center space-y-2 mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Esmeralda</h2>
+                    <span class="block text-2xl text-pink-500">&</span>
+                    <h2 class="text-3xl font-bold text-gray-800">Francisco</h2>
+                </div>
+
+                <!-- Decorativo debajo de nombres -->
+                <div class="mb-6">
+                    <img src="decoracion3.png" alt="Decoración" class="mx-auto w-24">
+                </div>
+
+                <!-- Fecha y Hora -->
+                <div class="flex justify-center items-center gap-6 mb-10">
+                    <!-- 14 grande -->
+                    <div class="text-6xl font-extrabold text-pink-700 leading-none">14</div>
+
+                    <!-- Separador -->
+                    <div class="w-0.5 bg-gray-300 h-24"></div>
+
+                    <!-- Detalles -->
+                    <div class="text-center">
+                    <div class="flex justify-center gap-6 text-lg font-medium text-gray-700">
+                        <div>Febrero</div>
+                        <div>5:30</div>
                     </div>
-                    <div class="flip-unit">
-                    <div class="label">Horas</div>
-                    <div class="flip-card" id="hours">00</div>
-                    </div>
-                    <div class="flip-unit">
-                    <div class="label">Minutos</div>
-                    <div class="flip-card" id="minutes">00</div>
-                    </div>
-                    <div class="flip-unit">
-                    <div class="label">Segundos</div>
-                    <div class="flip-card" id="seconds">
-                        <div class="static">00</div>
-                        <div class="animated">00</div>
+                    <div class="w-0.5 bg-gray-300 h-4 my-2 mx-auto"></div>
+                    <div class="flex justify-center gap-6 text-lg font-medium text-gray-700">
+                        <div>2025</div>
+                        <div>P.M.</div>
                     </div>
                     </div>
                 </div>
-                <div id="message"></div>
+
+                <img src="flor1.png" alt="Flor decorativa" class="mx-auto w-20 mb-6">
+
+                <!-- Mensaje -->
+                <div class="text-center max-w-2xl mx-auto space-y-4 mb-10">
+                    <p>
+                    Te extendemos una cálida invitación para conmemorar nuestra unión mientras compartimos votos de amor y compromiso.
+                    </p>
+                    <img src="imagen1.png" alt="Imagen decorativa" class="mx-auto w-32">
+                    <p>
+                    Acompáñanos en este día tan especial para presenciar el comienzo de nuestro viaje juntos. Será un honor compartir este momento lleno de amor y alegría contigo.
+                    </p>
                 </div>
+
+                <img src="decoracion4.png" alt="Decoración" class="mx-auto w-28 mb-8">
+
+                <!-- Padres -->
+                <h3 class="text-center text-2xl font-bold text-gray-800 mb-4">Nuestros Padres</h3>
+
+                <!-- Carta Padres Novia -->
+                <div class="text-center mb-6">
+                    <h4 class="text-xl font-semibold mb-2">Padres de la Novia</h4>
+                    <div class="flex justify-center items-start gap-6">
+                    <div class="text-sm leading-tight text-gray-700 text-left">
+                        Maria<br />Elena<br />Saldivar<br />Cruz
+                    </div>
+                    <div class="w-0.5 bg-gray-300 h-24"></div>
+                    <div class="text-sm leading-tight text-gray-700 text-left">
+                        Jorge<br />Alberto<br />Rodríguez<br />Zámano
+                    </div>
+                    </div>
+                </div>
+
+                <img src="decoracion-divisora.png" alt="Decoración divisora" class="mx-auto w-24 mb-6">
+
+                <!-- Carta Padres Novio -->
+                <div class="text-center mb-6">
+                    <h4 class="text-xl font-semibold mb-2">Padres del Novio</h4>
+                    <div class="flex justify-center items-start gap-6">
+                    <div class="text-sm leading-tight text-gray-700 text-left">
+                        Martina<br />Gómez<br />Domínguez
+                    </div>
+                    <div class="w-0.5 bg-gray-300 h-24"></div>
+                    <div class="text-sm leading-tight text-gray-500 italic">&nbsp;</div>
+                    </div>
+                </div>
+
+                <p class="text-center italic text-gray-600 mb-10">
+                    Con amor y sabiduría, han tejido el camino que hoy recorremos juntos.
+                </p>
+
+                <img src="decoracion5.png" alt="Decoración" class="mx-auto w-28 mb-4">
+                <img src="flor2.png" alt="Flor decorativa" class="mx-auto w-20 mb-8">
+
+                <!-- Contador -->
+                <div class="text-center mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Faltan</h4>
+                    <div class="flex justify-center gap-6 text-2xl font-bold">
+                    <div class="flex flex-col items-center">
+                        <span id="dias">16</span>
+                        <small class="text-xs text-gray-500">DÍAS</small>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="horas">01</span>
+                        <small class="text-xs text-gray-500">HORAS</small>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="minutos">58</span>
+                        <small class="text-xs text-gray-500">MINUTOS</small>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="segundos">21</span>
+                        <small class="text-xs text-gray-500">SEGUNDOS</small>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="h-2 bg-blue-900 w-full rounded"></div>
             </div>
-            <p>Asiste a nuestra boda</p>
-            <img id="imgBoda" src="./resources/images/imgPareja.png" alt="Foto boda">
-            <p id="ltEsposo">CABALLERO</p>
-            <br>
-            <p>y</p>
-            <p id="ltEsposa">DAMA</p>
-            <p>Direccion:</p>
-            <p id="ltDireccion">Calle Falsa 123, Ciudad</p>
-            <div id="seccionCodigoVestimenta">
-                <p>Codigo de vestimenta:</p>
+
+            <span>Nuestra Historia</span>
+            <div id="carruselImagenes">
+
             </div>
-            <div id="seccionConfirmAsistencia" class="d-none">
-                <a id="btnConfirmarAsistencia" class="">Confirmar Asistencia...</a>
+            <div id="divisor"></div>
+            <span>Ceremonia</span>
+            <span>Iglesia del Espiritu Santo</span>
+            <span>5:30 p.m.</span>
+            <a href="">Ubicacion</a>
+            <span>Celebracion</span>
+            <span>Salon Jardin Cristal</span>
+            <span>7:30 p.m.</span>
+            <a href="">Ubicacion</a>
+
+            <span>Itinerario</span>
+            <!--Imagen-->
+            <span>Ceremonia</span>
+            <span>5:30 p.m.</span>
+            <!--Imagen-->
+            <span>Sesion de Fotos</span>
+            <span>6:30 p.m.</span>
+            <!--Imagen-->
+            <span>Banquete & Brindis</span>
+            <span>8:00 p.m.</span>
+            <!--Imagen-->
+            <span>Primer Baile & Baile con Padres</span>
+            <span>9:30 p.m.</span>
+            <!--Imagen-->
+            <span>Pastel & Ramo/Liga</span>
+            <span>10:30 p.m.</span>
+            <!--Imagen-->
+            <span>Fiesta & Tornaboda</span>
+            <span>11:00 p.m.</span>
+
+            <span>Confirmar Asistencia</span>
+            <span>
+                Queremos que disfruten al máximo esta celebración, por
+                lo que hemos decidido que sea un evento solo para
+                adultos.
+            </span>
+            <span>¡Agradecemos su comprensión!</span>
+
+            <span>Por favor, confirmen su asistencia con anticipación. </span>
+            <span>¡Nos encantará celebrar con ustedes!</span>
+            <button>Confirma Aqui</button>
+            <div id="divImagenes">
+
+            </div>
+
+            <span>Codigo de vestimenta</span>
+            <span>Formal Elegante</span>
+            <span>Color Blanco reservado para la novia</span>
+            <div id="imgRegalo">
+
+            </div>
+            <span>Mesa de Regalos</span>
+            <span>
+                Lo que más valoramos es su presencia, y si
+                desean hacernos un obsequio, aquí
+                encontrarán algunas opciones.
+            </span>
+            <a href="">Datos Bancarios</a>
+            <a href="">Lista de Regalos</a>
+            <div>
+                <!--Imagen instagram-->
+                <span>Etiqueta tus Fotos</span>
+                <span>
+                    Captura los momentos más especiales y
+                    compártelos con nosotros usando el hashtag
+                    #BodaEsmeralda&Francisco en Instagram
+                </span>
+                <a href="">#EsmeraldayFrancisco</a>
+                <div id="divisor"></div>
+                <span>
+                    Cada uno de ustedes es parte fundamental de
+                    nuestra vida, ya sea como familia o amigos. No
+                    podríamos imaginar este día sin su presencia
+                    para celebrarlo juntos. 
+                </span>
+                <span>¡Los esperamos con todo nuestro corazón!</span>
+                <span>Contacto</span>
+                <!--Imagen Whattsapp-->
+                <a href="">Consultar Esmeralda</a>
+                <a href="">Consultar Francisco</a>
+            </div>
+            <div>
+                <span>Te esperamos</span>
+            </div>
+            <div id="footer">
+                <span>Esmeralda & Francisco 2025 . Invitaciones SnapClick Design</span>
             </div>
         </div>
     </div>

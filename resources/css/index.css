@@ -1,19 +1,13 @@
-:root {
-  --borde-grosor-first: 2px;
-  --borde-distancia-first: 5px;
-}
-
-
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden;
-  background: #f0f0f0;
 }
 
 body {
   font-family: Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
 .contenido {
@@ -28,177 +22,274 @@ body {
   display: none;
 }
 
-h1 {
-  margin-bottom: 10px;
+#invitacion {
+  background-image: url('fondo-boda.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  color: #3b2f2f;
+  font-family: 'Georgia', serif;
+  text-align: center;
 }
 
-.invitation p {
-  font-size: 1.1rem;
+.decorativo {
+  width: 100px;
+  margin: 20px auto;
+  display: block;
+}
+
+.titulo-principal {
+  font-size: 48px;
   margin: 10px 0;
 }
 
-#countdown-container {
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
+.nombres h2 {
   display: inline-block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  margin: 20px 0;
+  margin: 0 10px;
+  font-size: 32px;
 }
 
-#countdown {
+.fecha-evento {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0;
+}
+
+.bloque-fecha, .bloque-hora {
+  text-align: center;
+}
+
+.fecha-arriba, .hora-arriba {
+  font-size: 18px;
+  display: block;
+  font-weight: 600;
+}
+
+.fecha-grande {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.fecha-abajo, .hora-abajo {
+  font-size: 18px;
+  display: block;
+}
+
+.flor {
+  width: 80px;
+  margin: 30px auto;
+  display: block;
+}
+
+.mensaje {
+  font-size: 18px;
+  margin: 20px auto;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.imagen-mensaje {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
+}
+
+.subtitulo {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.carta-padres {
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.nombres-padres {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.padre-nombre {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.linea-vertical {
+  width: 2px;
+  height: 100px;
+  background-color: #aaa;
+}
+
+.mensaje-final {
+  margin: 30px auto;
+  max-width: 500px;
+  font-style: italic;
+}
+
+.contador-wrapper h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.contador {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
+  font-size: 24px;
 }
 
-.flip-unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.label {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-/* Días, horas y minutos */
-.flip-card {
-  background: #222;
-  color: #fff;
-  font-size: 2rem;
-  padding: 15px 20px;
-  border-radius: 10px;
-  perspective: 1000px;
-  min-width: 60px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Flip normal */
-.flip-card.flip {
-  transform: rotateX(180deg);
-}
-
-/* SEGUNDOS ESPECIAL */
-#seconds {
-  position: relative;
-  background: #222;
-  color: #fff;
-  font-size: 2rem;
-  padding: 15px 20px;
-  border-radius: 10px;
-  min-width: 60px;
-  height: 78px;
-  overflow: hidden;
-}
-
-#seconds .static {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+.contador div {
   text-align: center;
-  line-height: 60px;
 }
 
-#seconds .animated {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  line-height: 60px;
-  transform: translateY(0);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+.contador span {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
 }
 
-#seconds .animated.slide {
-  transform: translateY(-100%);
-  opacity: 0;
+.contador small {
+  font-size: 12px;
+  color: #666;
 }
 
-/*
-Seccion Div general de invitacion
-*/
-#con-invitacion,
-#sin-invitacion {
-  min-height: 100vh;    /* Ocupa al menos toda la pantalla */
+.linea-azul {
+  height: 10px;
+  background-color: #002147;
+  margin-top: 40px;
+}
+
+/* Decoración línea */
+.decorativa-linea {
+  width: 100px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Fecha y hora visual */
+.bloque-fecha-hora {
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fff;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  padding: 40px 20px;
-  /* Mantén los bordes y outline si los necesitas */
 }
 
-/*
-BORDES DE LINEAS
-*/
-.borde-superior,
-.borde-inferior,
-.borde-izquierdo,
-.borde-derecho {
-  position: fixed;
-  background: #bbb;
-  z-index: 1; /* por debajo del contenido */
+.columna-central {
+  display: inline-block;
 }
 
-/* Líneas delgadas */
-.borde-superior {
-  top: var(--borde-distancia-first);
-  left: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  right: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  height: var(--borde-grosor-first);
-}
-.borde-inferior {
-  bottom: var(--borde-distancia-first);
-  left: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  right: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  height: var(--borde-grosor-first);
-}
-.borde-izquierdo {
-  top: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  bottom: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  left: var(--borde-distancia-first);
-  width: var(--borde-grosor-first);
-}
-.borde-derecho {
-  top: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  bottom: calc(var(--borde-distancia-first) + var(--borde-grosor-first));
-  right: var(--borde-distancia-first);
-  width: var(--borde-grosor-first);
+.numero-principal {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.flor-fondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 220px;      /* Ajusta el tamaño según necesites */
-  height: auto;
-  opacity: 0.48;     /* Transparencia */
-  z-index: 1;        /* Debajo del contenido principal */
-  pointer-events: none; /* No bloquea clics */
-  user-select: none;
+.linea-uno,
+.linea-dos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  margin: 5px 0;
 }
 
-.flor-fondo-der {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 220px;      /* Ajusta el tamaño según necesites */
-  height: auto;
-  opacity: 0.48;     /* Transparencia */
-  z-index: 1;
+.decorativa-linea {
+  width: 100px;
+  margin: 20px auto;
+  display: block;
+}
+
+.flor {
+  width: 80px;
+  margin: 20px auto;
+  display: block;
+}
+
+.divisor {
+  width: 80%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 30px auto;
+}
+
+/* Bordes de página */
+.borde-pagina-externo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  border: 0.5px solid #bbb;
+  border-radius: 18px;
   pointer-events: none;
-  user-select: none;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.borde-pagina-interno {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  right: 48px;
+  bottom: 48px;
+  border: 3px solid #bbb;
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: 11;
+  box-sizing: border-box;
+}
+
+/* Bloque fecha y hora */
+.bloque-fecha-hora {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fecha-grid {
+  display: grid;
+  grid-template-columns: auto 1px auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.numero-fecha {
+  grid-row: span 2;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linea-vertical {
+  background-color: #555;
+  width: 2px;
+  height: 80px;
+}
+
+.detalle-fecha {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.texto-fecha {
+  font-size: 18px;
+  font-weight: 500;
 }
