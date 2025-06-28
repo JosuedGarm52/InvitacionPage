@@ -31,6 +31,18 @@ body {
   color: rgb(65, 76, 108);
 }
 
+.bg-azul{
+  background-color: rgb(65, 76, 108);
+}
+
+.cafe{
+  color:rgb(144 105 84);
+}
+
+.bg-cafe{
+  background-color: rgb(144 105 84);
+}
+
 .contenido {
   position: relative;
   z-index: 10;
