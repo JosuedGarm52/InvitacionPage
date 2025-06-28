@@ -10,6 +10,10 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -25,49 +29,52 @@
 
         <div id="con-invitacion" class="d-none" style="text-align: center;">
             <div id="invitacion" class="bg-cover bg-center py-4 px-4 max-w-4xl mx-auto">
-                <!-- Fondo decorativo superior -->
+                <!-- Fondo decorativo superior con tamaño aumentado -->
                 <div class="mb-2">
-                    <img src="resources/images/figura1.png" alt="Decoración superior" class="mx-auto w-1/2 h-[100px] object-contain">
+                    <img src="resources/images/figura1.png" alt="Decoración superior" class="mx-auto w-2/3 h-[140px] object-contain">
                 </div>
 
-                <h1 class="text-4xl md:text-5xl text-center font-extrabold text-pink-700 mb-2">Nuestra Boda</h1>
+                <!-- Título más grande -->
+                <h1 class="text-7xl md:text-8xl text-center font-normal mb-2 letra1 azul">Nuestra Boda</h1>
 
-                <!-- Fondo decorativo inferior más pegado -->
-                <div class="-mt-2 mb-4">
-                    <img src="resources/images/figura2.png" alt="Decoración inferior" class="mx-auto w-1/2 h-[100px] object-contain">
+                <!-- Fondo decorativo inferior más pegado sin afectar arriba -->
+                <div class="relative -translate-y-3 mb-2">
+                    <img src="resources/images/figura2.png" alt="Decoración inferior" class="mx-auto w-2/3 h-[140px] object-contain">
                 </div>
 
-                <!-- Nombres más comprimidos -->
-                <div class="text-center space-y-1 mb-6">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-0">Esmeralda</h2>
-                    <span class="block text-2xl text-pink-500 leading-none -mt-2">&</span>
-                    <h2 class="text-3xl font-bold text-gray-800 -mt-2 mb-2">Francisco</h2>
+                <!-- Nombres aún más grandes -->
+                <div class="text-center space-y-0 mb-6 cursive-letra azul">
+                    <h2 class="text-7xl md:text-8xl font-normal mb-0">Esmeralda</h2>
+                    <span class="block text-6xl leading-none -mt-6 relative -top-2">&</span>
+                    <h2 class="text-7xl md:text-8xl font-normal -mt-6 mb-2">Francisco</h2>
                 </div>
 
-                <!-- Decorativo debajo de nombres más pegado -->
-                <div class="-mt-2 mb-4">
-                    <img src="resources/images/figura2.png" alt="Decoración" class="mx-auto w-1/2 h-[100px] object-contain">
+                <!-- Decorativo debajo de nombres más pegado con tamaño aumentado -->
+                <div class="-mt-6 mb-2">
+                    <img src="resources/images/figura2.png" alt="Decoración" class="mx-auto w-2/3 h-[140px] object-contain">
                 </div>
 
                 <!-- Fecha y Hora -->
-                <div class="flex justify-center items-center gap-6 mb-10">
-                    <!-- 14 grande -->
+                <div class="flex justify-center items-center gap-6 mb-10 text-center">
+                    <!-- Columna 1: Número grande -->
                     <div class="text-6xl font-extrabold text-pink-700 leading-none">14</div>
 
-                    <!-- Separador -->
+                    <!-- Columna 2: Línea vertical -->
                     <div class="w-0.5 bg-gray-300 h-24"></div>
 
-                    <!-- Detalles -->
-                    <div class="text-center">
-                    <div class="flex justify-center gap-6 text-lg font-medium text-gray-700">
+                    <!-- Columna 3: Mes y Año -->
+                    <div class="flex flex-col gap-1 text-lg font-medium text-gray-700">
                         <div>Febrero</div>
-                        <div>5:30</div>
-                    </div>
-                    <div class="w-0.5 bg-gray-300 h-4 my-2 mx-auto"></div>
-                    <div class="flex justify-center gap-6 text-lg font-medium text-gray-700">
                         <div>2025</div>
-                        <div>P.M.</div>
                     </div>
+
+                    <!-- Columna 4: Línea vertical -->
+                    <div class="w-0.5 bg-gray-300 h-24"></div>
+
+                    <!-- Columna 5: Hora y Período -->
+                    <div class="flex flex-col gap-1 text-lg font-medium text-gray-700">
+                        <div>5:30</div>
+                        <div>P.M.</div>
                     </div>
                 </div>
 

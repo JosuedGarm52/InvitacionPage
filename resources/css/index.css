@@ -10,6 +10,27 @@ body {
   min-height: 100vh;
 }
 
+/* Tipografías personalizadas para tu invitación */
+.cursive-letra {
+  font-family: 'Great Vibes', cursive;
+}
+
+.letra1 {
+  font-family: 'Playfair Display', serif;
+}
+
+.letra2 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.letra3 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.azul{
+  color: rgb(65, 76, 108);
+}
+
 .contenido {
   position: relative;
   z-index: 10;
