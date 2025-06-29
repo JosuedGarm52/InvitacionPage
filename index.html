@@ -29,6 +29,26 @@
             <p>No parece que tengas una invitación válida.</p>
             <p>Por favor, contacta a los organizadores para obtener acceso.</p>
         </div>
+        <!-- Botón de audio sticky -->
+        <div class="fixed top-4 right-4 z-50 group">
+            <!-- Botón principal -->
+            <button onclick="toggleMute()" class="bg-pink-600 hover:bg-pink-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                <i id="main-audio-icon" class="fas fa-volume-up text-xl"></i>
+            </button>
+
+            <!-- Menú flotante al hacer hover -->
+            <div class="absolute right-14 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white border rounded-lg p-2 shadow-xl space-y-2">
+                <button onclick="toggleMute()" class="block w-full text-sm text-gray-700 hover:text-pink-600">
+                    <i class="fas fa-volume-mute mr-2"></i>Mutear
+                </button>
+                <button onclick="togglePlayPause()" class="block w-full text-sm text-gray-700 hover:text-pink-600">
+                    <i class="fas fa-play mr-2"></i>Play/Pausa
+                </button>
+            </div>
+
+            <!-- Audio oculto -->
+            <audio id="audio-boda" src="resources/audio/musica-fondo.mp3" loop></audio>
+        </div>
 
         <div id="con-invitacion" class="d-none" style="text-align: center;">
             <div id="invitacion" class="bg-cover bg-center py-4 px-4 max-w-4xl mx-auto">
@@ -487,6 +507,7 @@
     <!--script src="./resources/js/cronoTimer.js"></script-->
     <script src="./resources/js/controlArchivos.js"></script>
     <script src="./resources/js/main.js"></script>
+    <script src="./resources/js/controlAudio.js"></script>
     <script>
         window.onload = async () => {
             console.log("✅ Página cargada");
