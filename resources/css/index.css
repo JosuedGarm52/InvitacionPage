@@ -43,6 +43,13 @@ body {
   background-color: rgb(144 105 84);
 }
 
+.fondo-especial {
+  background-image: url('../images/backgroundMarmolGolden.jpeg'); /* Cambia la ruta */
+  background-size: cover;       /* Ajusta para cubrir el div completo */
+  background-position: center;  /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+}
+
 .contenido {
   position: relative;
   z-index: 10;
@@ -56,7 +63,6 @@ body {
 }
 
 #invitacion {
-  background-image: url('fondo-boda.jpg');
   background-size: cover;
   background-position: center;
   padding: 60px 20px;
