@@ -44,7 +44,7 @@ body {
 }
 
 .fondo-especial {
-  background-image: url('../images/backgroundMarmolGolden.jpeg'); /* Cambia la ruta */
+  background-image: url('../images/fondoMarmol.jpg'); /* Cambia la ruta */
   background-size: cover;       /* Ajusta para cubrir el div completo */
   background-position: center;  /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
