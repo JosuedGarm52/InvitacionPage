@@ -50,6 +50,18 @@ body {
   background-repeat: no-repeat; /* Evita repeticiones */
 }
 
+.plata{
+  color: rgb(192, 192, 192);
+}
+
+.plata-bg{
+  background-color: rgb(192, 192, 192);
+}
+
+.plataOscuro-bg{
+  background-color: rgb(120, 120, 120);
+}
+
 .contenido {
   position: relative;
   z-index: 10;
