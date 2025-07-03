@@ -1,3 +1,38 @@
+:root{
+  --primary-color: rgb(137 99 77);
+  --bg-primary-color: #865c00;
+
+  --secondary-color: rgb(192, 192, 192);
+  --bg-secondary-color: rgb(120, 120, 120);
+
+  --tertiary-color: #bfa76a;         /* Crema para texto */
+  --bg-tertiary-color: #fdf6e3;      /* Crema claro para fondo */
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.bg-primary-color {
+  background-color: var(--bg-primary-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.bg-secondary-color {
+  background-color: var(--bg-secondary-color);
+}
+
+.tertiary-color {
+  color: var(--tertiary-color);
+}
+
+.bg-tertiary-color {
+  background-color: var(--bg-tertiary-color);
+}
+
 body, html {
   margin: 0;
   padding: 0;
