@@ -379,3 +379,11 @@ body {
   font-size: 18px;
   font-weight: 500;
 }
+
+.fondo-marco {
+  background-image: url('../images/Recuadro.png');
+  background-size: contain;       /* ¡Evita que se recorte! */
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 3 / 4;            /* Ajusta según la proporción del marco */
+}
