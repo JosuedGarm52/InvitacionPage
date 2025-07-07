@@ -16,6 +16,13 @@ function obtenerPnumberDesdeURL() {
 }
 
 function validarInvitado() {
+  const hostname = window.location.hostname;
+
+  // Excluir validación si es entorno local
+  if (hostname === '127.0.0.1' || hostname === 'localhost') {
+    return { nombre: 'Local Dev', pnumber: 0 }; // o simplemente: return null;
+  }
+
   const pnumber = obtenerPnumberDesdeURL();
   if (!objInvitados || !Array.isArray(objInvitados.invitados)) return null;
 

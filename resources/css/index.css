@@ -97,6 +97,10 @@ body {
   background-color: rgb(120, 120, 120);
 }
 
+.bg-oro {
+  background: linear-gradient(135deg, #bfa76a 60%, #fffbe6 100%);
+}
+
 .contenido {
   position: relative;
   z-index: 10;
