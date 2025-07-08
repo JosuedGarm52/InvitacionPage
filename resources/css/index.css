@@ -101,6 +101,26 @@ body {
   background: linear-gradient(135deg, #bfa76a 60%, #fffbe6 100%);
 }
 
+.bg-plata-d {
+  background: linear-gradient(
+      135deg,
+      #d9d9d9 0%,
+      #f1f1f1 10%,
+      #bcbcbc 20%,
+      #e6e6e6 35%,
+      #a8a8a8 50%,
+      #e6e6e6 65%,
+      #bcbcbc 80%,
+      #f5f5f5 90%,
+      #d9d9d9 100%
+  );
+  background-size: 300% 300%;
+  animation: brilloPlata 10s ease-in-out infinite;
+  color: #2a2a2a; /* texto oscuro para contraste */
+  border-radius: 12px;
+}
+
+
 .contenido {
   position: relative;
   z-index: 10;
