@@ -17,6 +17,10 @@
   background-color: var(--bg-primary-color);
 }
 
+.border-primary-color {
+  border-color: var(--primary-color) !important;
+}
+
 .secondary-color {
   color: var(--secondary-color);
 }
