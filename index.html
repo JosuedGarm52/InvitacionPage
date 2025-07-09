@@ -251,121 +251,124 @@
                 <div class="bg-blue-900 w-full rounded" style="height: 1cm;"></div>
             </div>
 
-            <div id="ubicacion" class="fondo-especial">
-                <section class="py-12 px-4 bg-white text-center">
-                    <div class="max-w-6xl mx-auto grid grid-cols-3 gap-4 items-center">
-                        <!-- Ceremonia -->
-                        <div class="flex flex-col items-center space-y-4">
-                            <!-- Imagen circular -->
-                            <img src="resources/images/iglesia.png" alt="Ceremonia" class="w-84 h-84 object-cover rounded-full shadow-md" />
+            <!--Seccion de historia eitinerario-->
+            <div class="fondo-especial">
+                <div id="ubicacion">
+                    <section class="py-12 px-4 text-center">
+                        <div class="max-w-6xl mx-auto grid grid-cols-3 gap-4 items-center">
+                            <!-- Ceremonia -->
+                            <div class="flex flex-col items-center space-y-4">
+                                <!-- Imagen circular -->
+                                <img src="resources/images/iglesia.png" alt="Ceremonia" class="w-84 h-84 object-cover rounded-full shadow-md" />
 
-                            <h3 class="text-7xl cursive-letra primary-color">Ceremonia</h3>
-                            <p class="text-4xl letra1 primary-color">Iglesia del Espíritu Santo</p>
+                                <h3 class="text-7xl cursive-letra primary-color">Ceremonia</h3>
+                                <p class="text-4xl letra1 primary-color">Iglesia del Espíritu Santo</p>
 
-                            <!-- Hora como cápsula -->
-                            <div class="flex items-center justify-center h-full">
-                               <span class="px-14 py-4 rounded-full border-4 border-primary-color primary-color letra1 text-5xl font-bold bg-transparent">
-                                    5:30 p.m.
-                                </span>
+                                <!-- Hora como cápsula -->
+                                <div class="flex items-center justify-center h-full">
+                                <span class="px-14 py-4 rounded-full border-4 border-primary-color primary-color letra1 text-5xl font-bold bg-transparent">
+                                        5:30 p.m.
+                                    </span>
+                                </div>
+
+                                <!-- Botón ubicación -->
+                                <div class="flex items-center justify-center h-full">
+                                    <a href="#" class="px-14 py-4 rounded-full bg-primary-color cursive-letra text-white text-6xl font-bold">
+                                        Ubicación
+                                    </a>
+                                </div>
                             </div>
 
-                            <!-- Botón ubicación -->
-                            <div class="flex items-center justify-center h-full">
-                                <a href="#" class="px-14 py-4 rounded-full bg-primary-color cursive-letra text-white text-6xl font-bold">
+                            <!-- Divisor vertical -->
+                            <div class="flex justify-center">
+                            <img src="resources/images/DivisorVertical2.png" alt="Divisor" class="h-full max-h-72" />
+                            </div>
+
+                            <!-- Celebración -->
+                            <div class="flex flex-col items-center space-y-4">
+                                <!-- Imagen circular -->
+                                <img src="resources/images/brindis5.png" alt="Celebración" class="w-84 h-84 object-cover rounded-full shadow-md" />
+
+                                <h3 class="text-xl font-semibold text-gray-800">Celebración</h3>
+                                <p class="text-gray-600 text-sm">Salón Jardín Cristal</p>
+
+                                <!-- Hora como cápsula -->
+                                <span class="px-6 py-1 rounded-full border border-gray-400 text-gray-700 text-sm">7:30 p.m.</span>
+
+                                <!-- Botón ubicación -->
+                                <a href="#" class="bg-blue-700 text-white px-6 py-1 rounded-full text-sm hover:bg-blue-800 transition">
                                     Ubicación
                                 </a>
                             </div>
                         </div>
+                    </section>
+                </div>
 
-                        <!-- Divisor vertical -->
-                        <div class="flex justify-center">
-                        <img src="resources/images/DivisorVertical2.png" alt="Divisor" class="h-full max-h-72" />
-                        </div>
+                <div id="Itinerario">
+                    <section class="py-12 px-4">
+                        <h2 class="text-center text-2xl font-semibold text-gray-800 mb-8">Itinerario</h2>
 
-                        <!-- Celebración -->
-                        <div class="flex flex-col items-center space-y-4">
-                            <!-- Imagen circular -->
-                            <img src="resources/images/brindis5.png" alt="Celebración" class="w-84 h-84 object-cover rounded-full shadow-md" />
+                        <div class="max-w-4xl mx-auto space-y-10 relative">
+                            <!-- Línea vertical con rombos -->
+                            <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-blue-800 z-0"></div>
 
-                            <h3 class="text-xl font-semibold text-gray-800">Celebración</h3>
-                            <p class="text-gray-600 text-sm">Salón Jardín Cristal</p>
+                            <!-- Evento -->
+                            <div class="grid grid-cols-3 items-center gap-6 relative z-10">
+                            <!-- Imagen -->
+                            <div class="flex justify-center">
+                                <img src="" alt="Ceremonia" class="w-16 h-16 object-cover rounded-xl shadow" />
+                            </div>
 
-                            <!-- Hora como cápsula -->
-                            <span class="px-6 py-1 rounded-full border border-gray-400 text-gray-700 text-sm">7:30 p.m.</span>
+                            <!-- Rombos -->
+                            <div class="flex flex-col items-center justify-between h-40 relative">
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                            </div>
 
-                            <!-- Botón ubicación -->
-                            <a href="#" class="bg-blue-700 text-white px-6 py-1 rounded-full text-sm hover:bg-blue-800 transition">
-                                Ubicación
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                            <!-- Texto -->
+                            <div class="text-left">
+                                <h4 class="text-lg font-semibold text-gray-800">Ceremonia</h4>
+                                <p class="text-sm text-gray-600">5:30 p.m.</p>
+                            </div>
+                            </div>
 
-            <div id="Itinerario">
-                <section class="bg-white py-12 px-4">
-                    <h2 class="text-center text-2xl font-semibold text-gray-800 mb-8">Itinerario</h2>
+                            <!-- Evento 2 -->
+                            <div class="grid grid-cols-3 items-center gap-6 relative z-10">
+                            <div class="flex justify-center">
+                                <img src="" alt="Sesión de Fotos" class="w-16 h-16 object-cover rounded-xl shadow" />
+                            </div>
+                            <div class="flex flex-col items-center justify-between h-40 relative">
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="text-lg font-semibold text-gray-800">Sesión de Fotos</h4>
+                                <p class="text-sm text-gray-600">6:30 p.m.</p>
+                            </div>
+                            </div>
 
-                    <div class="max-w-4xl mx-auto space-y-10 relative">
-                        <!-- Línea vertical con rombos -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-blue-800 z-0"></div>
+                            <!-- Repite los eventos así -->
+                            <div class="grid grid-cols-3 items-center gap-6 relative z-10">
+                            <div class="flex justify-center">
+                                <img src="" alt="Banquete" class="w-16 h-16 object-cover rounded-xl shadow" />
+                            </div>
+                            <div class="flex flex-col items-center justify-between h-40 relative">
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                                <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="text-lg font-semibold text-gray-800">Banquete & Brindis</h4>
+                                <p class="text-sm text-gray-600">8:00 p.m.</p>
+                            </div>
+                            </div>
 
-                        <!-- Evento -->
-                        <div class="grid grid-cols-3 items-center gap-6 relative z-10">
-                        <!-- Imagen -->
-                        <div class="flex justify-center">
-                            <img src="" alt="Ceremonia" class="w-16 h-16 object-cover rounded-xl shadow" />
+                            <!-- Puedes seguir repitiendo el patrón... -->
                         </div>
-
-                        <!-- Rombos -->
-                        <div class="flex flex-col items-center justify-between h-40 relative">
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                        </div>
-
-                        <!-- Texto -->
-                        <div class="text-left">
-                            <h4 class="text-lg font-semibold text-gray-800">Ceremonia</h4>
-                            <p class="text-sm text-gray-600">5:30 p.m.</p>
-                        </div>
-                        </div>
-
-                        <!-- Evento 2 -->
-                        <div class="grid grid-cols-3 items-center gap-6 relative z-10">
-                        <div class="flex justify-center">
-                            <img src="" alt="Sesión de Fotos" class="w-16 h-16 object-cover rounded-xl shadow" />
-                        </div>
-                        <div class="flex flex-col items-center justify-between h-40 relative">
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                        </div>
-                        <div class="text-left">
-                            <h4 class="text-lg font-semibold text-gray-800">Sesión de Fotos</h4>
-                            <p class="text-sm text-gray-600">6:30 p.m.</p>
-                        </div>
-                        </div>
-
-                        <!-- Repite los eventos así -->
-                        <div class="grid grid-cols-3 items-center gap-6 relative z-10">
-                        <div class="flex justify-center">
-                            <img src="" alt="Banquete" class="w-16 h-16 object-cover rounded-xl shadow" />
-                        </div>
-                        <div class="flex flex-col items-center justify-between h-40 relative">
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                            <div class="w-4 h-4 bg-blue-800 rotate-45"></div>
-                        </div>
-                        <div class="text-left">
-                            <h4 class="text-lg font-semibold text-gray-800">Banquete & Brindis</h4>
-                            <p class="text-sm text-gray-600">8:00 p.m.</p>
-                        </div>
-                        </div>
-
-                        <!-- Puedes seguir repitiendo el patrón... -->
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
 
             <div id="confirmAsistencia">
