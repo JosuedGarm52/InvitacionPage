@@ -6,6 +6,7 @@
   --bg-secondary-color: rgb(120, 120, 120);
 
   --tertiary-color: #bfa76a;         /* Crema para texto */
+  --tertiary-light-color: #ffce53; 
   --bg-tertiary-color: #fdf6e3;      /* Crema claro para fondo */
 }
 
@@ -29,8 +30,20 @@
   background-color: var(--bg-secondary-color);
 }
 
+.bg-secondary-overlay {
+  background-color: rgba(120, 120, 120, 0.5) !important;
+}
+
 .tertiary-color {
   color: var(--tertiary-color);
+}
+
+.tertiary-light-color {
+  color: var(--tertiary-light-color);
+}
+
+.bg-tertiary-light-color {
+  background-color: var(--tertiary-light-color);
 }
 
 .bg-tertiary-color {
