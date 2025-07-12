@@ -19,10 +19,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <div class="contenedor">
         <div id="sin-invitacion" class="d-none" style="text-align: center;">
             <h2 class="text-danger">😕 ¡Ups!</h2>
@@ -63,7 +67,7 @@
                 </div>
 
                 <!-- Título más grande -->
-                <h1 class="text-7xl md:text-8xl text-center font-normal mb-2 letra1 primary-color">Nuestra Boda</h1>
+                <h1 class="text-7xl md:text-8xl text-center font-normal mb-2 letra1 primary-color" data-aos="fade-right">Nuestra Boda</h1>
 
                 <!-- Fondo decorativo inferior más pegado sin afectar arriba -->
                 <div class="relative -translate-y-3 mb-2">
@@ -642,9 +646,10 @@
             console.log("🔍 Invitado encontrado:", invitado);
 
             if (invitado) {
-            mostrarConInvitacion();
+                mostrarConInvitacion();
+                AOS.refresh();
             } else {
-            mostrarSinInvitacion();
+                mostrarSinInvitacion();
             }
         };
     </script>
