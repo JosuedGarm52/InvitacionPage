@@ -170,6 +170,32 @@ body {
   margin: 10px 0;
 }
 
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.animar-scroll {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animar-scroll.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .nombres h2 {
   display: inline-block;
   margin: 0 10px;
