@@ -171,9 +171,12 @@ body {
 }
 
 /*
-  Secccion de animaciones
+  ##################################
+  #### Sección de animaciones ######
+  ##################################
 */
 
+/* Deslizamiento desde la izquierda */
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -189,29 +192,31 @@ body {
   animation: slideInLeft 1s ease forwards;
 }
 
+/* Comportamiento general para elementos que se animan con scroll */
 .animar-scroll {
   opacity: 0;
-  transform: translateX(-50px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.animar-scroll.visible {
+.anim-slide {
+  transform: translateX(-50px);
+}
+
+/* Para animación de deslizamiento */
+.anim-slide.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-.animar-scroll {
-  opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-/* Solo animación de opacidad */
+/* Para animación fade-in puro */
 .anim-fade.visible {
   opacity: 1;
 }
 
 /*
-  Secccion de animaciones - FIN
+  ##################################
+  #   Sección de animaciones - FIN #
+  ##################################
 */
 
 .nombres h2 {
