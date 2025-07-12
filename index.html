@@ -647,7 +647,9 @@
 
             if (invitado) {
                 mostrarConInvitacion();
-                AOS.refresh();
+                setTimeout(() => {
+                    AOS.refresh();
+                }, 100);
             } else {
                 mostrarSinInvitacion();
             }
