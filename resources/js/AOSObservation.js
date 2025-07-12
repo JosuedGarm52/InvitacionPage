@@ -10,7 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.1 });
 
-  elementos.forEach(el => {
-    observer.observe(el);
-  });
+  elementos.forEach(el => observer.observe(el));
 });

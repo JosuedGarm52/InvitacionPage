@@ -170,6 +170,10 @@ body {
   margin: 10px 0;
 }
 
+/*
+  Secccion de animaciones
+*/
+
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -195,6 +199,20 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
+
+.animar-scroll {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Solo animación de opacidad */
+.anim-fade.visible {
+  opacity: 1;
+}
+
+/*
+  Secccion de animaciones - FIN
+*/
 
 .nombres h2 {
   display: inline-block;
