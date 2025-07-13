@@ -90,7 +90,8 @@ async function cargarDatosBoda(isLocal = false) {
               consultaNovia: "whatsapp.com/1234567890",
               consultaNovio: "whatsapp.com/0987654321",
               encuesta: "form.miform.com/viewform?usp=preview",
-              urlEncuestaPrueba: "form.miform.com/viewform?usp=pp_url&entry.1882687068=333"
+              urlEncuestaPrueba: "form.miform.com/viewform?usp=pp_url&entry.1882687068=333",
+              datosBancarios: "data/datos.txt"
           };
           console.warn("⚠️ Modo local detectado. Usando datos de boda predeterminados.");
           return;
