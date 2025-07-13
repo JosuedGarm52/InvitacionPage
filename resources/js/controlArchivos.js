@@ -1,6 +1,7 @@
 const claveSecretaInvitados = 'MiSuperClaveSecreta2025!';
 let objInvitados = null;
 let datosBodaGlobal = null;
+let invitadoActual = null;
 
 function xorDecrypt(data, key) {
   let result = '';
@@ -21,17 +22,19 @@ function validarInvitado() {
 
   // Excluir validación si es entorno local
   if (hostname === '127.0.0.1' || hostname === 'localhost') {
-    return { 
+    invitadoActual =  { 
       nombre: 'Local Dev', 
-      pnumber: 0 ,
-      cnumber: 0,
+      pnumber: 1 ,
+      cnumber: 2,
     }; // o simplemente: return null;
+    return invitadoActual;
   }
 
   const pnumber = obtenerPnumberDesdeURL();
   if (!objInvitados || !Array.isArray(objInvitados.invitados)) return null;
 
-  return objInvitados.invitados.find(inv => Number(inv.pnumber) === pnumber) || null;
+  invitadoActual =  objInvitados.invitados.find(inv => Number(inv.pnumber) === pnumber) || null;
+  return invitadoActual;
 }
 
 function mostrarConInvitacion() {
@@ -83,6 +86,11 @@ async function cargarDatosBoda(isLocal = false) {
               padreNovia: "Carlos Eduardo Fernández López",
               madreNovio: "Ana Patricia Ruiz Sánchez",
               padreNovio: "Javier Alberto Morales Díaz",
+              datosBancarios: "https://www.ejemplo.com/datos-bancarios",
+              consultaNovia: "whatsapp.com/1234567890",
+              consultaNovio: "whatsapp.com/0987654321",
+              encuesta: "form.miform.com/viewform?usp=preview",
+              urlEncuestaPrueba: "form.miform.com/viewform?usp=pp_url&entry.1882687068=333"
           };
           console.warn("⚠️ Modo local detectado. Usando datos de boda predeterminados.");
           return;

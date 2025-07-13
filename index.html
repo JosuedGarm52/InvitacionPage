@@ -431,7 +431,8 @@
 
                     <!-- Botón estilo cápsula -->
                     <div class="flex justify-center pt-6">
-                        <a href="#"
+                        <a id="btnConfirmar"
+                            href="#"
                             class="px-14 py-4 rounded-full bg-primary-color text-white text-5xl cursive-letra font-bold shadow-lg hover:bg-opacity-90 transition animar-scroll anim-zoom">
                             Confirmar Aquí
                         </a>
@@ -520,7 +521,7 @@
 
                     <!-- Botones -->
                     <div class="flex justify-center space-x-10 pt-6 animar-scroll anim-zoom">
-                        <a href="#" class="px-20 py-8 rounded-full bg-tertiary-light-color cursive-letra text-white text-6xl font-bold hover:bg-[#b18979] transition">
+                        <a id="aBancario" href="#" class="px-20 py-8 rounded-full bg-tertiary-light-color cursive-letra text-white text-6xl font-bold hover:bg-[#b18979] transition">
                             Datos Bancarios
                         </a>
                     </div>
@@ -553,7 +554,7 @@
 
                     <!-- Botón hashtag -->
                     <div class="flex justify-center pt-2 animar-scroll anim-zoom">
-                        <a href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition">
+                        <a id="aHashtag" href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition">
                             #EsmeraldaYFrancisco
                         </a>
                     </div>
@@ -593,10 +594,10 @@
 
                     <!-- Botones de contacto -->
                     <div class="flex flex-col items-center gap-6 pt-4">
-                        <a href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom">
+                        <a id="btnConsultaEsposa" href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom">
                             Consultar a Esmeralda
                         </a>
-                        <a href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom">
+                        <a id="btnConsultaEsposo" href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom">
                             Consultar a Francisco
                         </a>
                     </div>
@@ -632,12 +633,14 @@
             // Excluir validación si es entorno local
             if (hostname === '127.0.0.1' || hostname === 'localhost') {
                 console.warn("⚠️ Modo local detectado. Saltando validación de invitado.");
+                objInvitados = validarInvitado();
                 mostrarConInvitacion();
                 await cargarDatosBoda(true); // Aun en local puedes cargar datos de boda si lo deseas
                 console.log("Datos boda (local):", datosBodaGlobal);
                 cambiarNombresEsposos(datosBodaGlobal);
                 cambiarNombresPadres(datosBodaGlobal);
                 cambiarUbicaciones(datosBodaGlobal);
+                mostrarUrlEncuesta(datosBodaGlobal);
                 return;
             }
 
@@ -655,11 +658,26 @@
 
             await cargarDatosBoda(); // Cargar datos de boda al final
             cambiarNombresEsposos(datosBodaGlobal);
+            cambiarNombresPadres(datosBodaGlobal);
+            cambiarUbicaciones(datosBodaGlobal);
+            mostrarUrlEncuesta(datosBodaGlobal);
         };
 
         function cambiarNombresEsposos(datos){
+            if (datos.nameEsposa === "" || datos.nameEsposo === "") {
+                console.warn("⚠️ Nombres de esposos no definidos. No se actualizarán los nombres.");
+                return;
+            }
             $("#nombreEsposa").text(datos.nameEsposa);
             $("#nombreEsposo").text(datos.nameEsposo);
+            const btnHash = $("#aHashtag");
+            btnHash.text(`#${datos.nameEsposa} y ${datos.nameEsposo}`);
+            const btnConsultaEsposa = $("btnConsultaEsposa");
+            const btnConsultaEsposo = $("btnConsultaEsposo");
+            btnConsultaEsposa.attr("href", datos.consultaNovia);
+            btnConsultaEsposo.attr("href", datos.consultaNovio);
+            btnConsultaEsposa.text(`Consultar a ${datos.nameEsposa}`);
+            btnConsultaEsposo.text(`Consultar a ${datos.nameEsposo}`);
         }
 
         function cambiarNombresPadres(datos) {
@@ -683,6 +701,30 @@
             }
             $('#aIglesia').attr('href', datos.direccionMapC);
             $('#aSalon').attr('href', datos.direccionMapS);
+        }
+
+        function cambiarDatosBancarios(datos){
+            if(datos.datosBancarios === ""){
+                console.warn("⚠️ datos de banco no incluidos");
+                return;
+            }
+            $('#aBancario').attr('href', datos.datosBancarios);
+        }
+
+        function mostrarUrlEncuesta(datos) {
+            //console.log("📦 invitadoActual: " + JSON.stringify(invitadoActual, null, 2));
+            const cnumber = invitadoActual?.cnumber || 0;
+
+            if (cnumber === 0) {
+                console.warn("⚠️ No se encontró cnumber. Usando valor por defecto.");
+                return;
+            }
+
+            // Reemplazar los últimos 3 dígitos del parámetro con el nuevo cnumber
+            const urlBase = datos.urlEncuestaPrueba.replace(/(\d{3})$/, '');
+            const nuevaURL = urlBase + cnumber;
+
+            $("#btnConfirmar").attr("href", nuevaURL);
         }
     </script>
     <script src="resources/js/AOSObservation.js"></script>
