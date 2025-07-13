@@ -41,7 +41,7 @@ function validarInvitado() {
   const pnumber = obtenerPnumberDesdeURL();
   if (!objInvitados || !Array.isArray(objInvitados.invitados)) return null;
 
-  invitadoActual =  objInvitados.invitados.find(inv => Number(inv.pnumber) === pnumber) || null;
+  invitadoActual =  objInvitados.invitados.find(inv => Number(inv.pnumber) == pnumber) || null;
   return invitadoActual;
 }
 
