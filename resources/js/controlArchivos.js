@@ -108,8 +108,8 @@ async function cargarDatosBoda(isLocal = false) {
       if (!response.ok) throw new Error('No se pudo cargar datos de boda');
 
       const base64Texto = await response.text();
-      const cifrado = atob(base64Texto);
-      const textoPlano = xorDecrypt(cifrado, claveSecretaInvitados);
+      // No hacer atob aquí porque xorDecrypt ya lo hace
+      const textoPlano = xorDecrypt(base64Texto, claveSecretaInvitados);
 
       datosBodaGlobal = JSON.parse(textoPlano);
       console.log("✅ Datos de boda cargados:", datosBodaGlobal);
