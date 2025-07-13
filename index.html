@@ -216,23 +216,23 @@
                 <!-- Carta Padres Novio -->
                 <div class="text-center mb-10 px-4 sm:px-6 md:px-0">
                     <div
-                        class="relative mx-auto px-6 py-10 bg-no-repeat bg-contain bg-center"
+                        class="relative mx-auto px-6 py-12 bg-no-repeat bg-contain bg-center"
                         style="background-image: url('resources/images/Recuadro.png'); max-width: 600px; aspect-ratio: 3 / 2;"
                     >
                         <div class="relative z-10 text-center px-6 py-10">
                             <h4 class="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 primary-color letra1">Padres del Novio</h4>
 
-                            <div class="flex flex-wrap w-full items-center justify-center gap-2">
+                            <div class="grid grid-cols-4 items-center justify-center gap-2 w-full px-16">
                                 <!-- Madre -->
                                 <div
                                     id="nombreMadreNovio"
-                                    class="basis-full sm:basis-5/12 pr-0 sm:pr-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-right leading-tight"
+                                    class="primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-right leading-tight"
                                 >
                                     Martina<br />Gómez<br />Domínguez
                                 </div>
 
                                 <!-- Divisor -->
-                                <div class="flex-shrink-0 px-2 hidden sm:block">
+                                <div class="flex justify-center">
                                     <img
                                         src="resources/images/DivisorVertical.png"
                                         alt="Divisor"
@@ -240,11 +240,16 @@
                                     />
                                 </div>
 
-                                <!-- Padre + Cruz contenedor -->
-                                <div class="basis-full sm:basis-5/12 pl-0 sm:pl-4 flex items-center justify-center sm:justify-start space-x-2 text-center sm:text-left primary-color letra1 text-lg sm:text-xl md:text-2xl leading-tight">
-                                    <div id="nombrePadreNovio">
-                                        Javier<br />Morales<br />Ríos
-                                    </div>
+                                <!-- Padre -->
+                                <div
+                                    id="nombrePadreNovio"
+                                    class="primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-left leading-tight"
+                                >
+                                    Javier<br />Morales<br />Ríos
+                                </div>
+
+                                <!-- Cruz -->
+                                <div class="flex justify-start sm:justify-start ml-4">
                                     <img
                                         src="resources/images/CruzDorada.png"
                                         alt="Cruz dorada en memoria"
