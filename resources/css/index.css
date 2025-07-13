@@ -176,41 +176,62 @@ body {
   ##################################
 */
 
-/* Deslizamiento desde la izquierda */
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 1s ease forwards;
-}
-
-/* Comportamiento general para elementos que se animan con scroll */
+/* Base para scroll animado */
 .animar-scroll {
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
 }
 
+/* Visibilidad genérica */
+.animar-scroll.visible {
+  opacity: 1;
+}
+
+/* === SLIDE SUAVE desde la izquierda === */
 .anim-slide {
   transform: translateX(-50px);
 }
 
-/* Para animación de deslizamiento */
 .anim-slide.visible {
-  opacity: 1;
   transform: translateX(0);
 }
 
-/* Para animación fade-in puro */
+/* === FADE IN SOLO === */
 .anim-fade.visible {
-  opacity: 1;
+  /* transform no necesario */
+  appearance: none;
+}
+
+/* === ZOOM CON EFECTO BOUNCE === */
+.anim-zoom {
+  transform: scale(0.9);
+  opacity: 0;
+}
+.anim-zoom.visible {
+  animation: zoomBounce 0.8s ease-out forwards;
+}
+
+@keyframes zoomBounce {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* === WALK-IN desde la izquierda (fuera de pantalla) === */
+.anim-walk-in {
+  transform: translateX(-100%);
+}
+.anim-walk-in.visible {
+  transform: translateX(0);
+  transition: transform 1.2s ease-out, opacity 1s ease;
 }
 
 /*
