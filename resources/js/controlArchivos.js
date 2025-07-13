@@ -1,5 +1,6 @@
 const claveSecretaInvitados = 'MiSuperClaveSecreta2025!';
 let objInvitados = null;
+let datosBodaGlobal = null;
 
 function xorDecrypt(data, key) {
   let result = '';
@@ -20,7 +21,11 @@ function validarInvitado() {
 
   // Excluir validación si es entorno local
   if (hostname === '127.0.0.1' || hostname === 'localhost') {
-    return { nombre: 'Local Dev', pnumber: 0 }; // o simplemente: return null;
+    return { 
+      nombre: 'Local Dev', 
+      pnumber: 0 ,
+      cnumber: 0,
+    }; // o simplemente: return null;
   }
 
   const pnumber = obtenerPnumberDesdeURL();
@@ -64,4 +69,35 @@ async function actualizarInvitados() {
   } catch (error) {
     console.error('❌ Error al actualizar invitados:', error);
   }
+}
+
+async function cargarDatosBoda(isLocal = false) {
+    try {
+      if(isLocal) {
+          datosBodaGlobal = {
+              nameEsposo: "Hector",
+              nameEsposa: "Sara",
+              direccionMapC : "maps.google.com/?q=Dirección+de+la+iglesia",
+              direccionMapS : "maps.google.com/?q=Dirección+de+la+boda",
+              madreNovia: "María Isabel González Martínez",
+              padreNovia: "Carlos Eduardo Fernández López",
+              madreNovio: "Ana Patricia Ruiz Sánchez",
+              padreNovio: "Javier Alberto Morales Díaz",
+          };
+          console.warn("⚠️ Modo local detectado. Usando datos de boda predeterminados.");
+          return;
+      }
+      const response = await fetch('./data/datosBoda.bbss');
+      if (!response.ok) throw new Error('No se pudo cargar datos de boda');
+
+      const base64Texto = await response.text();
+      const cifrado = atob(base64Texto);
+      const textoPlano = xorDecrypt(cifrado, claveSecretaInvitados);
+
+      datosBodaGlobal = JSON.parse(textoPlano);
+      console.log("✅ Datos de boda cargados:", datosBodaGlobal);
+
+    } catch (error) {
+      console.error("❌ Error al cargar datos de boda:", error);
+    }
 }
