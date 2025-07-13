@@ -3,12 +3,20 @@ let objInvitados = null;
 let datosBodaGlobal = null;
 let invitadoActual = null;
 
-function xorDecrypt(data, key) {
-  let result = '';
-  for (let i = 0; i < data.length; i++) {
-    result += String.fromCharCode(data.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+function xorDecrypt(base64Text, key) {
+  // Decodificar base64 a bytes
+  const bytes = Uint8Array.from(atob(base64Text), c => c.charCodeAt(0));
+  const keyBytes = new TextEncoder().encode(key);
+
+  // XOR byte a byte
+  const resultBytes = new Uint8Array(bytes.length);
+  for (let i = 0; i < bytes.length; i++) {
+    resultBytes[i] = bytes[i] ^ keyBytes[i % keyBytes.length];
   }
-  return result;
+
+  // Decodificar bytes a UTF-8 string
+  const decoder = new TextDecoder('utf-8');
+  return decoder.decode(resultBytes);
 }
 
 function obtenerPnumberDesdeURL() {
