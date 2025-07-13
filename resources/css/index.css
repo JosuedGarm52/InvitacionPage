@@ -498,3 +498,44 @@ body {
   background-position: center;
   aspect-ratio: 3 / 4;            /* Ajusta según la proporción del marco */
 }
+
+
+/* Por defecto (PC) */
+#ubicacion .grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* En móviles */
+@media (max-width: 768px) {
+  #ubicacion .grid {
+    grid-template-columns: 1fr !important; /* Una sola columna */
+    gap: 2rem; /* Separación vertical */
+  }
+
+  /* Centrar y ajustar tamaño imágenes circulares */
+  #ubicacion img.w-84, #ubicacion img.h-84 {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Ajustar tamaños de texto */
+  #ubicacion h3 {
+    font-size: 3rem !important;
+  }
+
+  #ubicacion p.text-4xl {
+    font-size: 1.8rem !important;
+  }
+
+  /* Ajustar botón ubicación */
+  #ubicacion #aIglesia,
+  #ubicacion #aSalon {
+    font-size: 2rem !important;
+    padding: 1rem 2rem !important;
+  }
+
+  /* Ocultar divisor vertical (opcional) */
+  #ubicacion > div.flex.justify-center {
+    display: none;
+  }
+}

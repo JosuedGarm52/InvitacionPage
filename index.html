@@ -29,24 +29,51 @@
             <p>Por favor, contacta a los organizadores para obtener acceso.</p>
         </div>
         <!-- Botón de audio sticky -->
-        <div class="fixed top-4 right-4 z-50 group">
+        <div class="fixed top-4 right-4 z-50 group sm:top-6 sm:right-6 md:top-8 md:right-8">
             <!-- Botón principal -->
-            <button onclick="toggleMute()" class="bg-pink-600 hover:bg-pink-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
-                <i id="main-audio-icon" class="fas fa-volume-up text-xl"></i>
+            <button
+                onclick="toggleMute()"
+                class="bg-pink-600 hover:bg-pink-700 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg"
+                aria-label="Control de audio"
+            >
+                <i id="main-audio-icon" class="fas fa-volume-up text-lg sm:text-xl"></i>
             </button>
 
             <!-- Menú flotante al hacer hover -->
-            <div class="absolute right-14 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white border rounded-lg p-3 shadow-xl space-y-3 w-36">
-                <button onclick="toggleMute()" class="block w-full text-sm text-gray-700 hover:text-pink-600">
-                <i class="fas fa-volume-mute mr-2"></i>Mutear
+            <div
+                class="absolute right-full top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white border rounded-lg p-2 sm:p-3 shadow-xl space-y-2 sm:space-y-3 w-32 sm:w-36 text-sm sm:text-base"
+                style="min-width: 140px;"
+            >
+                <button
+                onclick="toggleMute()"
+                class="block w-full text-gray-700 hover:text-pink-600 flex items-center gap-2"
+                type="button"
+                >
+                <i class="fas fa-volume-mute"></i> Mutear
                 </button>
-                <button onclick="togglePlayPause()" class="block w-full text-sm text-gray-700 hover:text-pink-600">
-                <i class="fas fa-play mr-2"></i>Play/Pausa
+                <button
+                onclick="togglePlayPause()"
+                class="block w-full text-gray-700 hover:text-pink-600 flex items-center gap-2"
+                type="button"
+                >
+                <i class="fas fa-play"></i> Play/Pausa
                 </button>
                 <!-- Control de volumen -->
-                <div class="text-sm text-gray-700">
+                <div class="text-gray-700">
                 <label for="volume-slider" class="block mb-1">Volumen</label>
-                <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.5" class="w-full accent-pink-600">
+                <input
+                    id="volume-slider"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.5"
+                    class="w-full accent-pink-600"
+                    aria-valuemin="0"
+                    aria-valuemax="1"
+                    aria-valuenow="0.5"
+                    aria-label="Control de volumen"
+                />
                 </div>
             </div>
 
@@ -56,67 +83,69 @@
 
         <div id="con-invitacion" class="d-none" style="text-align: center;">
             <div id="invitacion" class="bg-cover bg-center py-4 px-4 mx-auto fondo-especial">
-                <!-- Fondo decorativo superior con tamaño aumentado -->
+                <!-- Fondo decorativo superior con tamaño adaptativo -->
                 <div class="mb-2">
                     <img src="resources/images/figura1.png" alt="Decoración superior" class="mx-auto w-2/3 h-[140px] object-contain">
                 </div>
 
-                <!-- Título más grande -->
-                <h1 class="text-7xl md:text-8xl text-center font-normal mb-2 letra1 primary-color animar-scroll anim-slide">Nuestra Boda</h1>
+                <!-- Título adaptativo -->
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-center font-normal mb-2 letra1 primary-color animar-scroll anim-slide">
+                    Nuestra Boda
+                </h1>
 
-                <!-- Fondo decorativo inferior más pegado sin afectar arriba -->
+                <!-- Fondo decorativo inferior -->
                 <div class="relative -translate-y-3 mb-2">
                     <img src="resources/images/figura2.png" alt="Decoración inferior" class="mx-auto w-2/3 h-[140px] object-contain">
                 </div>
 
-                <!-- Nombres aún más grandes -->
+                <!-- Nombres adaptativos -->
                 <div class="text-center space-y-0 mb-6 cursive-letra primary-color animar-scroll anim-fade">
-                    <h2 id="nombreEsposa" class="text-7xl md:text-8xl font-normal mb-0">Esmeralda</h2>
-                    <span class="block text-6xl leading-none -mt-6 relative -top-2">&</span>
-                    <h2 id="nombreEsposo" class="text-7xl md:text-8xl font-normal -mt-6 mb-2">Francisco</h2>
+                    <h2 id="nombreEsposa" class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal mb-0">Esmeralda</h2>
+                    <span class="block text-3xl sm:text-5xl md:text-6xl leading-none -mt-6 relative -top-2">&</span>
+                    <h2 id="nombreEsposo" class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal -mt-6 mb-2">Francisco</h2>
                 </div>
 
-                <!-- Decorativo debajo de nombres más pegado con tamaño aumentado -->
+                <!-- Decorativo debajo nombres -->
                 <div class="-mt-6 mb-2">
                     <img src="resources/images/figura2.png" alt="Decoración" class="mx-auto w-2/3 h-[140px] object-contain">
                 </div>
 
-                <!-- Fecha y Hora -->
-                <div class="flex justify-center items-center gap-6 mb-10 text-center text3 primary-color">
-                    <!-- Columna 1: Número grande -->
-                    <div class="text-9xl font-normal leading-none animar-scroll anim-slide">14</div>
+                <!-- Fecha y Hora adaptativos -->
+                <div class="flex flex-wrap justify-center items-center gap-6 mb-10 text-center text3 primary-color">
+                    <!-- Número grande adaptable -->
+                    <div class="text-5xl sm:text-7xl md:text-9xl font-normal leading-none animar-scroll anim-slide">14</div>
 
-                    <!-- Columna 2: Línea vertical -->
-                    <div class="w-1 h-36 bg-cafe"></div>
+                    <!-- Línea vertical -->
+                    <div class="w-1 h-16 sm:h-24 md:h-36 bg-cafe"></div>
 
-                    <!-- Columna 3: Mes y Año -->
-                    <div class="flex flex-col gap-1 text-6xl font-medium animar-scroll anim-slide">
+                    <!-- Mes y año -->
+                    <div class="flex flex-col gap-1 text-3xl sm:text-5xl md:text-6xl font-medium animar-scroll anim-slide">
                         <div>Febrero</div>
                         <div>2025</div>
                     </div>
 
-                    <!-- Columna 4: Línea vertical -->
-                    <div class="w-1 h-36 bg-cafe"></div>
+                    <!-- Línea vertical -->
+                    <div class="w-1 h-16 sm:h-24 md:h-36 bg-cafe"></div>
 
-                    <!-- Columna 5: Hora y Período -->
-                    <div class="flex flex-col gap-1 text-6xl font-medium animar-scroll anim-slide">
+                    <!-- Hora y período -->
+                    <div class="flex flex-col gap-1 text-3xl sm:text-5xl md:text-6xl font-medium animar-scroll anim-slide">
                         <div>5:30</div>
                         <div>P.M.</div>
                     </div>
                 </div>
 
-                <img src="resources/images/florDecorativa1.png" alt="Flor decorativa" class="mx-auto w-90 mb-6">
+                <img src="resources/images/florDecorativa1.png" alt="Flor decorativa" class="mx-auto w-72 sm:w-80 md:w-90 mb-6">
 
                 <!-- Mensaje -->
-               <div class="text-center max-w-2xl mx-auto mb-10">
+                <div class="text-center max-w-2xl mx-auto mb-10 px-2">
                     <div class="mx-auto w-full max-w-xl h-[120px] overflow-hidden flex items-center justify-center">
                         <img src="resources/images/figura1.png" alt="Decoración superior" class="w-full object-contain object-center">
                     </div>
-                    <p class="mx-auto max-w-xl primary-color letra2 px-2 text-[35px] leading-relaxed animar-scroll anim-slide">
+                    <p class="mx-auto max-w-xl primary-color letra2 text-[22px] sm:text-[28px] md:text-[35px] leading-relaxed animar-scroll anim-slide">
                         Te extendemos una cálida invitación para conmemorar nuestra unión mientras compartimos votos de amor y compromiso.
                     </p>
-                    <img src="resources/images/pajaros.png" alt="Imagen decorativa" class="mx-auto w-32">
-                   <p class="mx-auto max-w-xl primary-color letra2 px-2 text-[32px] leading-relaxed animar-scroll anim-slide">
+                    <img src="resources/images/pajaros.png" alt="Imagen decorativa" class="mx-auto w-24 sm:w-32">
+                    <p class="mx-auto max-w-xl primary-color letra2 text-[20px] sm:text-[26px] md:text-[32px] leading-relaxed animar-scroll anim-slide">
                         Acompáñanos en este día tan especial para presenciar el comienzo de nuestro viaje juntos. Será un honor compartir este momento lleno de amor y alegría contigo.
                     </p>
                     <div class="mx-auto w-full max-w-xl h-[80px] overflow-hidden flex items-center justify-center">
@@ -125,52 +154,51 @@
                 </div>
 
                 <!-- Padres -->
-                <h3 class="text-center text-7xl md:text-8xl font-semibold primary-color cursive-letra mb-6 animar-scroll anim-slide">
+                <h3 class="text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold primary-color cursive-letra mb-6 animar-scroll anim-slide">
                     Nuestros Padres
                 </h3>
 
                 <!-- Carta Padres Novia -->
-                <div class="text-center mb-10">
-                    <!-- Marco como fondo, ahora más grande -->
+                <div class="text-center mb-10 px-4 sm:px-6 md:px-0">
                     <div
                         class="relative mx-auto px-6 py-12 bg-no-repeat bg-contain bg-center"
                         style="background-image: url('resources/images/Recuadro.png'); max-width: 600px; aspect-ratio: 3 / 2;"
                     >
                         <div class="relative z-10 text-center px-6 py-10">
-                        <h4 class="text-5xl font-semibold mb-6 primary-color letra1">Padres de la Novia</h4>
+                            <h4 class="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 primary-color letra1">Padres de la Novia</h4>
 
-                        <div class="flex w-full items-center justify-center gap-2">
-                            <!-- Madre -->
-                            <div
-                            id="nombreMadreNovia"
-                            class="basis-5/12 pr-4 primary-color letra1 text-2xl text-right leading-tight"
-                            >
-                                María<br />Isabel<br />González<br />Martínez
-                            </div>
+                            <div class="flex flex-wrap w-full items-center justify-center gap-2">
+                                <!-- Madre -->
+                                <div
+                                    id="nombreMadreNovia"
+                                    class="basis-full sm:basis-5/12 pr-0 sm:pr-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-right leading-tight"
+                                >
+                                    María<br />Isabel<br />González<br />Martínez
+                                </div>
 
-                            <!-- Divisor -->
-                            <div class="flex-shrink-0 px-2">
+                                <!-- Divisor -->
+                                <div class="flex-shrink-0 px-2 hidden sm:block">
+                                    <img
+                                        src="resources/images/DivisorVertical.png"
+                                        alt="Divisor"
+                                        class="h-20 sm:h-32 w-auto mx-auto"
+                                    />
+                                </div>
+
+                                <!-- Padre -->
+                                <div
+                                    id="nombrePadreNovia"
+                                    class="basis-full sm:basis-5/12 pl-0 sm:pl-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-left leading-tight"
+                                >
+                                    Carlos<br />Eduardo<br />Fernández<br />López
+                                </div>
                                 <img
-                                    src="resources/images/DivisorVertical.png"
-                                    alt="Divisor"
-                                    class="h-32 w-auto mx-auto"
+                                    src="resources/images/CruzDorada.png"
+                                    alt="Cruz dorada en memoria"
+                                    title="En memoria"
+                                    class="mt-1 h-10 sm:h-12 w-10 sm:w-12 opacity-80 -ml-4 mx-auto sm:mx-0"
                                 />
                             </div>
-
-                            <!-- Padre -->
-                            <div
-                            id="nombrePadreNovia"
-                            class="basis-5/12 pl-4 primary-color letra1 text-2xl text-left leading-tight"
-                            >
-                                Carlos<br />Eduardo<br />Fernández<br />López
-                            </div>
-                            <img
-                                src="resources/images/CruzDorada.png"
-                                alt="Cruz dorada en memoria"
-                                title="En memoria"
-                                class="mt-1 h-12 w-12 opacity-80 -ml-4"
-                            />
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -180,85 +208,83 @@
                 </div>
 
                 <!-- Carta Padres Novio -->
-                <div class="text-center mb-10">
+                <div class="text-center mb-10 px-4 sm:px-6 md:px-0">
                     <div
                         class="relative mx-auto px-6 py-10 bg-no-repeat bg-contain bg-center"
                         style="background-image: url('resources/images/Recuadro.png'); max-width: 600px; aspect-ratio: 3 / 2;"
                     >
                         <div class="relative z-10 text-center px-6 py-10">
-                        <h4 class="text-5xl font-semibold mb-6 primary-color letra1">Padres del Novio</h4>
+                            <h4 class="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 primary-color letra1">Padres del Novio</h4>
 
-                        <div class="flex w-full items-center justify-center gap-2">
-                            <!-- Madre -->
-                            <div
-                            id="nombreMadreNovio"
-                            class="basis-5/12 pr-4 primary-color letra1 text-2xl text-right leading-tight"
-                            >
-                                Martina<br />Gómez<br />Domínguez
-                            </div>
+                            <div class="flex flex-wrap w-full items-center justify-center gap-2">
+                                <!-- Madre -->
+                                <div
+                                    id="nombreMadreNovio"
+                                    class="basis-full sm:basis-5/12 pr-0 sm:pr-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-right leading-tight"
+                                >
+                                    Martina<br />Gómez<br />Domínguez
+                                </div>
 
-                            <!-- Divisor -->
-                            <div class="flex-shrink-0 px-2">
-                            <img
-                                src="resources/images/DivisorVertical.png"
-                                alt="Divisor"
-                                class="h-32 w-auto mx-auto"
-                            />
-                            </div>
+                                <!-- Divisor -->
+                                <div class="flex-shrink-0 px-2 hidden sm:block">
+                                    <img
+                                        src="resources/images/DivisorVertical.png"
+                                        alt="Divisor"
+                                        class="h-20 sm:h-32 w-auto mx-auto"
+                                    />
+                                </div>
 
-                            <!-- Padre -->
-                            <div
-                            id="nombrePadreNovio"
-                            class="basis-5/12 pl-4 primary-color letra1 text-2xl text-left leading-tight"
-                            >
-                                Javier<br />Morales<br />Ríos
+                                <!-- Padre -->
+                                <div
+                                    id="nombrePadreNovio"
+                                    class="basis-full sm:basis-5/12 pl-0 sm:pl-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-left leading-tight"
+                                >
+                                    Javier<br />Morales<br />Ríos
+                                </div>
+                                <img
+                                    src="resources/images/CruzDorada.png"
+                                    alt="Cruz dorada en memoria"
+                                    title="En memoria"
+                                    class="mt-1 h-10 sm:h-12 w-10 sm:w-12 opacity-80 -ml-4 mx-auto sm:mx-0"
+                                />
                             </div>
-                            <img
-                                src="resources/images/CruzDorada.png"
-                                alt="Cruz dorada en memoria"
-                                title="En memoria"
-                                class="mt-1 h-12 w-12 opacity-80 -ml-4"
-                            />
-                        </div>
                         </div>
                     </div>
                 </div>
 
-                <p class="text-center primary-color letra2 text-[38px] italic leading-relaxed mb-8 mx-auto max-w-md animar-scroll anim-slide">
+                <p class="text-center primary-color letra2 text-[22px] sm:text-[28px] md:text-[38px] italic leading-relaxed mb-8 mx-auto max-w-md animar-scroll anim-slide">
                     Con amor y sabiduría, han tejido el camino que hoy recorremos juntos.
                 </p>
 
-                <!--img src="" alt="Decoración" class="mx-auto w-28 mb-4"-->
-                <img src="resources/images/Flores_2.png" alt="Flor decorativa" class="mx-auto w-91 mb-6">
+                <img src="resources/images/Flores_2.png" alt="Flor decorativa" class="mx-auto w-72 sm:w-80 md:w-91 mb-6">
 
                 <div class="w-full py-2 bg-oro plata-bg text-center mb-4">
-                    <h2 class="text-8xl md:text-9xl primary-color cursive-letra animar-scroll anim-slide">
+                    <h2 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl primary-color cursive-letra animar-scroll anim-slide">
                         Faltan
                     </h2>
                 </div>
 
                 <!-- Contador -->
                 <div class="text-center mb-6">
-                    <div class="flex justify-center gap-10 text-8xl font-bold">
-                        
+                    <div class="flex flex-wrap justify-center gap-6 sm:gap-10 text-4xl sm:text-6xl md:text-8xl font-bold">
                         <div class="flex flex-col items-center">
                             <span id="dias" class="primary-color">16</span>
-                            <small class="text-sm primary-color">DÍAS</small>
+                            <small class="text-xs sm:text-sm primary-color">DÍAS</small>
                         </div>
 
                         <div class="flex flex-col items-center">
                             <span id="horas" class="primary-color">01</span>
-                            <small class="text-sm primary-color">HORAS</small>
+                            <small class="text-xs sm:text-sm primary-color">HORAS</small>
                         </div>
 
                         <div class="flex flex-col items-center">
                             <span id="minutos" class="primary-color">58</span>
-                            <small class="text-sm primary-color">MINUTOS</small>
+                            <small class="text-xs sm:text-sm primary-color">MINUTOS</small>
                         </div>
 
                         <div class="flex flex-col items-center">
-                            <span id="segundos" class="secondary-color ">21</span>
-                            <small class="text-sm primary-color">SEGUNDOS</small>
+                            <span id="segundos" class="secondary-color">21</span>
+                            <small class="text-xs sm:text-sm primary-color">SEGUNDOS</small>
                         </div>
                     </div>
                 </div>
@@ -270,91 +296,57 @@
                 <div style="height: 1cm;" class="bg-blue-900 w-full rounded"></div>
             </div>
 
-            <!-- Carrusel y sección -->
-            <div id="carruselFotos" class="bg-plata-d">
-                <section class="text-center py-10 px-4 pb-0">
-                    <h2 class="text-6xl md:text-7xl mb-6 primary-color cursive-letra animar-scroll anim-slide">
-                        Nuestra Historia
-                    </h2>
-                    <!-- Carrusel -->
-                    <div class="swiper mySwiper w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg mb-10">
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                                <img src="resources/images/parejaTest1.png" alt="Historia 1" class="w-full h-64 object-cover" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="resources/images/parejaTest2.png" alt="Historia 2" class="w-full h-64 object-cover" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="resources/images/parejaTest3.png" alt="Historia 3" class="w-full h-64 object-cover" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="resources/images/parejaTest4.png" alt="Historia 4" class="w-full h-64 object-cover" />
-                            </div>
-                        </div>
-                        <!-- Navegación opcional -->
-                        <div class="swiper-button-next text-gray-700"></div>
-                        <div class="swiper-button-prev text-gray-700"></div>
-                        <!-- Paginación opcional -->
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </section>
-                <!-- Línea divisora azul al final del fondo plata -->
-                <div class="bg-blue-900 w-full rounded" style="height: 1cm;"></div>
-            </div>
-
-            <!--Seccion de historia eitinerario-->
+            <!--Seccion de historia e itinerario-->
             <div class="fondo-especial">
                 <div id="ubicacion">
                     <section class="py-12 px-4 text-center">
-                        <div class="max-w-6xl mx-auto grid grid-cols-3 gap-4 items-center">
+                        <div class="max-w-6xl mx-auto grid grid-cols-3 gap-4 items-center sm:grid-cols-1">
                             <!-- Ceremonia -->
                             <div class="flex flex-col items-center space-y-4">
-                                <!-- Imagen circular -->
-                                <img src="resources/images/iglesia.png" alt="Ceremonia" class="w-84 h-84 object-cover rounded-full shadow-md" />
+                                <!-- Imagen circular: en móvil reducimos tamaño -->
+                                <img src="resources/images/iglesia.png" alt="Ceremonia" class="w-84 h-84 sm:w-48 sm:h-48 object-cover rounded-full shadow-md" />
 
-                                <h3 class="text-7xl cursive-letra primary-color animar-scroll anim-slide">Ceremonia</h3>
-                                <p class="text-4xl letra1 primary-color">Iglesia del Espíritu Santo</p>
+                                <h3 class="text-7xl sm:text-4xl cursive-letra primary-color animar-scroll anim-slide">Ceremonia</h3>
+                                <p class="text-4xl sm:text-xl letra1 primary-color">Iglesia del Espíritu Santo</p>
 
                                 <!-- Hora como cápsula -->
                                 <div class="flex items-center justify-center h-full">
-                                    <span class="px-14 py-4 rounded-full border-4 border-primary-color primary-color letra1 text-5xl font-bold bg-transparent animar-scroll anim-fade">
+                                    <span class="px-14 py-4 sm:px-6 sm:py-2 rounded-full border-4 border-primary-color primary-color letra1 text-5xl sm:text-xl font-bold bg-transparent animar-scroll anim-fade">
                                         4:00 p.m.
                                     </span>
                                 </div>
 
                                 <!-- Botón ubicación -->
                                 <div class="flex items-center justify-center h-full">
-                                    <a id="aIglesia" href="#" class="px-14 py-4 rounded-full bg-primary-color cursive-letra text-white text-6xl font-bold animar-scroll anim-fade">
+                                    <a id="aIglesia" href="#" class="px-14 py-4 sm:px-6 sm:py-2 rounded-full bg-primary-color cursive-letra text-white text-6xl sm:text-xl font-bold animar-scroll anim-fade">
                                         Ubicación
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Divisor vertical -->
-                            <div class="flex justify-center">
-                            <img src="resources/images/DivisorVertical2.png" alt="Divisor" class="h-full max-h-72" />
+                            <!-- Divisor vertical: ocultar en móvil -->
+                            <div class="flex justify-center sm:hidden">
+                                <img src="resources/images/DivisorVertical2.png" alt="Divisor" class="h-full max-h-72" />
                             </div>
 
                             <!-- Celebración -->
                             <div class="flex flex-col items-center space-y-4">
-                                <!-- Imagen circular -->
-                                <img src="resources/images/brindis5.png" alt="Celebración" class="w-84 h-84 object-cover rounded-full shadow-md" />
+                                <!-- Imagen circular: en móvil reducimos tamaño -->
+                                <img src="resources/images/brindis5.png" alt="Celebración" class="w-84 h-84 sm:w-48 sm:h-48 object-cover rounded-full shadow-md" />
 
-                                <h3 class="text-7xl cursive-letra primary-color animar-scroll anim-slide">Celebración</h3>
-                                <p class="text-4xl letra1 primary-color">Salón Jardín Cristal</p>
+                                <h3 class="text-7xl sm:text-4xl cursive-letra primary-color animar-scroll anim-slide">Celebración</h3>
+                                <p class="text-4xl sm:text-xl letra1 primary-color">Salón Jardín Cristal</p>
 
                                 <!-- Hora como cápsula -->
                                 <div class="flex items-center justify-center h-full">
-                                    <span class="px-14 py-4 rounded-full border-4 border-primary-color primary-color letra1 text-5xl font-bold bg-transparent animar-scroll anim-fade">
+                                    <span class="px-14 py-4 sm:px-6 sm:py-2 rounded-full border-4 border-primary-color primary-color letra1 text-5xl sm:text-xl font-bold bg-transparent animar-scroll anim-fade">
                                         8:00 p.m.
                                     </span>
                                 </div>
 
                                 <!-- Botón ubicación -->
                                 <div class="flex items-center justify-center h-full">
-                                    <a id="aSalon" href="#" class="px-14 py-4 rounded-full bg-primary-color cursive-letra text-white text-6xl font-bold animar-scroll anim-fade">
+                                    <a id="aSalon" href="#" class="px-14 py-4 sm:px-6 sm:py-2 rounded-full bg-primary-color cursive-letra text-white text-6xl sm:text-xl font-bold animar-scroll anim-fade">
                                         Ubicación
                                     </a>
                                 </div>
@@ -374,69 +366,63 @@
                         <h2 class="text-center text-6xl md:text-7xl cursive-letra primary-color mb-8 animar-scroll anim-slide">Itinerario</h2>
 
                         <div class="max-w-4xl mx-auto space-y-10 relative">
-                            <!-- Línea vertical central (solo una vez, detrás de todo) -->
-                            <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-secondary-color z-0"></div>
+                            <!-- Línea vertical central: ocultar en móvil -->
+                            <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-secondary-color z-0 hidden sm:block"></div>
 
                             <!-- 🔹 Evento -->
-                            <div class="grid grid-cols-[1fr_0.5fr_1fr] items-center relative z-10">
+                            <div class="grid grid-cols-[1fr_0.5fr_1fr] sm:grid-cols-1 sm:gap-y-4 items-center relative z-10">
                                 <!-- Imagen más cerca del centro -->
-                                <div class="flex justify-end pr-1">
-                                    <img src="resources/images/icons8-iglesia-100.png" alt="Iglesia" class="w-28 h-28 object-cover" />
+                                <div class="flex justify-end pr-1 sm:justify-center">
+                                    <img src="resources/images/icons8-iglesia-100.png" alt="Iglesia" class="w-28 h-28 sm:w-16 sm:h-16 object-cover" />
                                 </div>
 
-                                <!-- Rombos -->
-                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10">
+                                <!-- Rombos: ocultar en móvil o reducir tamaño -->
+                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10 sm:hidden">
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                 </div>
 
                                 <!-- Texto más cerca del centro -->
-                                <div class="flex flex-col justify-center items-start pl-1 text-left">
-                                    <h4 class="text-3xl font-bold primary-color letra1">Iglesia</h4>
-                                    <p class="text-3xl primary-color letra1">4:00 p.m.</p>
+                                <div class="flex flex-col justify-center items-start pl-1 text-left sm:pl-0 sm:items-center sm:text-center">
+                                    <h4 class="text-3xl font-bold primary-color letra1 sm:text-xl">Iglesia</h4>
+                                    <p class="text-3xl primary-color letra1 sm:text-base">4:00 p.m.</p>
                                 </div>
                             </div>
 
                             <!-- 🔹 Evento -->
-                            <div class="grid grid-cols-[1fr_0.5fr_1fr] items-center relative z-10">
-                                <!-- Imagen más cerca del centro -->
-                                <div class="flex justify-end pr-1">
-                                    <img src="resources/images/icons8-champagne-100.png" alt="Ceremonia" class="w-28 h-28 object-cover" />
+                            <div class="grid grid-cols-[1fr_0.5fr_1fr] sm:grid-cols-1 sm:gap-y-4 items-center relative z-10">
+                                <div class="flex justify-end pr-1 sm:justify-center">
+                                    <img src="resources/images/icons8-champagne-100.png" alt="Ceremonia" class="w-28 h-28 sm:w-16 sm:h-16 object-cover" />
                                 </div>
 
-                                <!-- Rombos -->
-                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10">
+                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10 sm:hidden">
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                 </div>
 
-                                <!-- Texto más cerca del centro -->
-                                <div class="flex flex-col justify-center items-start pl-1 text-left">
-                                    <h4 class="text-3xl font-bold primary-color letra1">Ceremonia</h4>
-                                    <p class="text-3xl primary-color letra1">8:00 p.m.</p>
+                                <div class="flex flex-col justify-center items-start pl-1 text-left sm:pl-0 sm:items-center sm:text-center">
+                                    <h4 class="text-3xl font-bold primary-color letra1 sm:text-xl">Ceremonia</h4>
+                                    <p class="text-3xl primary-color letra1 sm:text-base">8:00 p.m.</p>
                                 </div>
                             </div>
 
                             <!-- 🔹 Evento -->
-                            <div class="grid grid-cols-[1fr_0.5fr_1fr] items-center relative z-10">
-                                <!-- Imagen más cerca del centro -->
-                                <div class="flex justify-end pr-1">
-                                    <img src="resources/images/icons8-danza-100.png" alt="Baile" class="w-28 h-28 object-cover" />
+                            <div class="grid grid-cols-[1fr_0.5fr_1fr] sm:grid-cols-1 sm:gap-y-4 items-center relative z-10">
+                                <div class="flex justify-end pr-1 sm:justify-center">
+                                    <img src="resources/images/icons8-danza-100.png" alt="Baile" class="w-28 h-28 sm:w-16 sm:h-16 object-cover" />
                                 </div>
 
-                                <!-- Rombos -->
-                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10">
+                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10 sm:hidden">
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                 </div>
 
-                                <!-- Texto más cerca del centro -->
-                                <div class="flex flex-col justify-center items-start pl-1 text-left">
-                                    <h4 class="text-3xl font-bold primary-color letra1">Baile</h4>
-                                    <p class="text-3xl primary-color letra1">10:00 p.m.</p>
+                                <div class="flex flex-col justify-center items-start pl-1 text-left sm:pl-0 sm:items-center sm:text-center">
+                                    <h4 class="text-3xl font-bold primary-color letra1 sm:text-xl">Baile</h4>
+                                    <p class="text-3xl primary-color letra1 sm:text-base">10:00 p.m.</p>
                                 </div>
                             </div>
 
@@ -452,34 +438,34 @@
             </div>
 
             <div id="confirmAsistencia" class="fondo-especial">
-                <section class="py-32 px-4 text-center space-y-10 max-w-4xl mx-auto">
+                <section class="py-20 px-4 text-center space-y-8 max-w-4xl mx-auto">
                     
                     <!-- Decoración superior -->
-                    <div class="mx-auto w-full max-w-xl h-[120px] overflow-hidden flex items-center justify-center">
-                        <img src="resources/images/figura1.png" alt="Decoración superior" class="w-full object-contain object-center">
+                    <div class="mx-auto w-full max-w-xl h-[120px] sm:h-[80px] overflow-hidden flex items-center justify-center">
+                        <img src="resources/images/figura1.png" alt="Decoración superior" class="w-full object-contain object-center" />
                     </div>
 
                     <!-- Título -->
-                    <h2 class="text-8xl md:text-9xl font-semibold cursive-letra primary-color ">Confirmar Asistencia</h2>
+                    <h2 class="text-7xl sm:text-4xl font-semibold cursive-letra primary-color">Confirmar Asistencia</h2>
 
                     <!-- Texto principal -->
-                    <p class="primary-color letra2 text-[32px] leading-relaxed px-2 animar-scroll anim-slide">
+                    <p class="primary-color letra2 text-[28px] sm:text-base leading-relaxed px-2 animar-scroll anim-slide">
                         Queremos que disfruten al máximo esta celebración, por lo que hemos decidido que sea un evento solo para adultos.
                     </p>
 
                     <!-- Agradecimiento -->
-                    <p class="text-4xl primary-color letra1 font-semibold animar-scroll anim-slide">¡Agradecemos su comprensión!</p>
+                    <p class="text-3xl sm:text-lg primary-color letra1 font-semibold animar-scroll anim-slide">¡Agradecemos su comprensión!</p>
 
                     <!-- Divisor decorativo -->
                     <div class="flex justify-center">
-                        <img src="resources/images/DivisorVertical3.png" alt="Divisor" class="w-72 md:w-96 my-6 object-contain">
+                        <img src="resources/images/DivisorVertical3.png" alt="Divisor" class="w-60 sm:w-40 my-6 object-contain" />
                     </div>
 
-                    <!-- Mensaje adicional -->
-                    <p class="primary-color letra2 text-[40px] leading-relaxed px-2 animar-scroll anim-slide">
+                    <!-- Mensajes adicionales -->
+                    <p class="primary-color letra2 text-[32px] sm:text-base leading-relaxed px-2 animar-scroll anim-slide">
                         Por favor, confirmen su asistencia con anticipación.
                     </p>
-                    <p class="primary-color letra2 text-[45px] leading-relaxed px-2 animar-scroll anim-slide">
+                    <p class="primary-color letra2 text-[35px] sm:text-base leading-relaxed px-2 animar-scroll anim-slide">
                         ¡Nos encantará celebrar con ustedes!
                     </p>
 
@@ -487,15 +473,15 @@
                     <div class="flex justify-center pt-6">
                         <a id="btnConfirmar"
                             href="#"
-                            class="px-14 py-4 rounded-full bg-primary-color text-white text-5xl cursive-letra font-bold shadow-lg hover:bg-opacity-90 transition animar-scroll anim-zoom">
+                            class="px-10 py-3 rounded-full bg-primary-color text-white text-3xl sm:text-base cursive-letra font-bold shadow-lg hover:bg-opacity-90 transition animar-scroll anim-zoom">
                             Confirmar Aquí
                         </a>
                     </div>
 
                     <!-- Decoración inferior -->
-                    <div class="mx-auto w-full max-w-xl h-[100px] overflow-hidden flex items-center justify-center">
+                    <div class="mx-auto w-full max-w-xl h-[100px] sm:h-[60px] overflow-hidden flex items-center justify-center">
                         <img src="resources/images/figura1.png" alt="Decoración inferior"
-                            class="w-full object-contain object-center rotate-180">
+                            class="w-full object-contain object-center rotate-180" />
                     </div>
                 </section>
             </div>
@@ -508,38 +494,38 @@
                         class="w-screen max-w-5xl mx-auto object-contain pointer-events-none" />
                 </div>
 
-                <section class="text-center space-y-15 max-w-3xl mx-auto pt-24">
+                <section class="text-center space-y-10 max-w-3xl mx-auto pt-24 sm:pt-16 px-2">
                     
                     <!-- Imágenes circulares -->
-                    <div class="flex justify-center items-center space-x-[-1rem]">
-                        <div class="w-[300px] h-[300px] rounded-full plata-bg border-8 border-[rgb(192,192,192)] overflow-hidden animar-scroll anim-walk-in">
+                    <div class="flex justify-center items-center space-x-[-1rem] sm:space-x-4 flex-wrap sm:flex-nowrap">
+                        <div class="w-[300px] h-[300px] sm:w-[150px] sm:h-[150px] rounded-full plata-bg border-8 border-[rgb(192,192,192)] overflow-hidden animar-scroll anim-walk-in mb-6 sm:mb-0">
                             <img src="resources/images/vestidoFemenino.png" alt="Vestido" class="w-full h-full object-contain" />
                         </div>
-                        <div class="w-[300px] h-[300px] rounded-full plata-bg border-8 border-[rgb(192,192,192)] overflow-hidden animar-scroll anim-walk-in">
+                        <div class="w-[300px] h-[300px] sm:w-[150px] sm:h-[150px] rounded-full plata-bg border-8 border-[rgb(192,192,192)] overflow-hidden animar-scroll anim-walk-in">
                             <img src="resources/images/TrajeCaballero.png" alt="Traje" class="w-full h-full object-contain" />
                         </div>
                     </div>
-                    <br>
+
                     <!-- Título -->
-                    <h2 class="text-7xl cursive-letra tertiary-color mt-12 animar-scroll anim-slide">Código de Vestimenta</h2>
+                    <h2 class="text-7xl sm:text-4xl cursive-letra tertiary-color mt-12 animar-scroll anim-slide">Código de Vestimenta</h2>
 
                     <!-- Línea divisora decorativa -->
                     <div class="flex justify-center">
-                    <img src="resources/images/DivisorVertical3_c2.png" alt="Divisor decorativo"
-                        class="w-72 md:w-96 my-6 object-contain" />
+                        <img src="resources/images/DivisorVertical3_c2.png" alt="Divisor decorativo"
+                            class="w-72 sm:w-40 my-6 object-contain" />
                     </div>
 
                     <!-- Descripciones -->
-                    <p class="tertiary-color letra2 text-[52px] leading-relaxed animar-scroll anim-zoom">
+                    <p class="tertiary-color letra2 text-[52px] sm:text-xl leading-relaxed animar-scroll anim-zoom">
                         Formal Elegante
                     </p>
-                    <p class="tertiary-color italic font-bold text-[34px] letra1 animar-scroll anim-zoom">
+                    <p class="tertiary-color italic font-bold text-[34px] sm:text-base letra1 animar-scroll anim-zoom">
                         Color blanco reservado para la novia
                     </p>
                 </section>
             </div>
 
-           <div id="Regalos" class="fondo-especial relative pt-0 pb-24 px-6 z-10">
+            <div id="Regalos" class="fondo-especial relative pt-0 pb-24 px-6 z-10">
                 <!-- Divisor superior superpuesto -->
                 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-[50px] z-30">
                     <img src="resources/images/DivisorVertical2_horizontal_v2.png"
@@ -549,33 +535,35 @@
 
                 <!-- Overlay gris translúcido -->
                 <div class="absolute inset-0 bg-secondary-overlay z-10"></div>
-                <section class="text-center space-y-14 max-w-4xl mx-auto relative z-20 pt-40">
+
+                <section class="text-center space-y-10 max-w-4xl mx-auto relative z-20 pt-40 sm:pt-24 px-4">
                     
                     <!-- Icono de regalo en círculo -->
                     <div class="flex justify-center">
-                        <div class="w-[360px] h-[360px] rounded-full bg-primary-color overflow-hidden shadow-lg flex items-center justify-center animar-scroll anim-zoom">
+                        <div class="w-[360px] h-[360px] sm:w-[180px] sm:h-[180px] rounded-full bg-primary-color overflow-hidden shadow-lg flex items-center justify-center animar-scroll anim-zoom">
                             <img src="resources/images/Regalo_v2.png" alt="Regalo"
                                 class="w-full h-full object-contain scale-[0.9]" />
                         </div>
                     </div>
 
                     <!-- Título -->
-                    <h2 class="text-8xl cursive-letra tertiary-light-color animar-scroll anim-slide">Mesa de Regalos</h2>
+                    <h2 class="text-8xl sm:text-5xl cursive-letra tertiary-light-color animar-scroll anim-slide">Mesa de Regalos</h2>
 
                     <!-- Divisor decorativo -->
                     <div class="flex justify-center animar-scroll anim-zoom">
                         <img src="resources/images/DivisorVertical3_c3.png" alt="Divisor"
-                            class="w-[200] my-6 object-contain" />
+                            class="w-48 sm:w-28 my-6 object-contain" />
                     </div>
 
                     <!-- Texto descriptivo -->
-                    <p class="tertiary-light-color text-[34px] leading-relaxed letra2 px-6 animar-scroll anim-zoom">
+                    <p class="tertiary-light-color text-[34px] sm:text-base leading-relaxed letra2 px-6 sm:px-2 animar-scroll anim-zoom">
                         Lo más valioso para nosotros es celebrar estos 25 años de amor junto a ustedes. Si desean hacernos un obsequio, les agradeceremos de corazón que sea en efectivo para apoyarnos a seguir construyendo recuerdos juntos.
                     </p>
 
                     <!-- Botones -->
                     <div class="flex justify-center space-x-10 pt-6 animar-scroll anim-zoom">
-                        <a id="aBancario" href="#" class="px-20 py-8 rounded-full bg-tertiary-light-color cursive-letra text-white text-6xl font-bold hover:bg-[#b18979] transition">
+                        <a id="aBancario" href="#"
+                            class="px-12 py-6 sm:px-6 sm:py-3 rounded-full bg-tertiary-light-color cursive-letra text-white text-4xl sm:text-base font-bold hover:bg-[#b18979] transition">
                             Datos Bancarios
                         </a>
                     </div>
@@ -583,32 +571,32 @@
             </div>
             
             <div id="Comparte" class="fondo-especial py-20 px-6 relative z-10">
-                <section class="text-center space-y-10 max-w-3xl mx-auto">
+                <section class="text-center space-y-8 max-w-3xl mx-auto px-2">
 
                     <!-- Círculo con ícono de Instagram -->
                     <div class="flex justify-center">
-                        <div class="w-[300px] h-[300px] rounded-full bg-primary-color flex items-center justify-center shadow-lg">
-                            <i class="fab fa-instagram text-white text-[180px] animar-scroll anim-zoom"></i>
+                        <div class="w-[300px] h-[300px] sm:w-[150px] sm:h-[150px] rounded-full bg-primary-color flex items-center justify-center shadow-lg">
+                            <i class="fab fa-instagram text-white text-[180px] sm:text-[90px] animar-scroll anim-zoom"></i>
                         </div>
                     </div>
 
                     <!-- Título -->
-                    <h2 class="text-7xl cursive-letra primary-color animar-scroll anim-slide">Etiqueta tus Fotos</h2>
+                    <h2 class="text-7xl sm:text-4xl cursive-letra primary-color animar-scroll anim-slide">Etiqueta tus Fotos</h2>
 
                     <!-- Línea divisora decorativa -->
                     <div class="flex justify-center">
-                        <img src="resources/images/DivisorVertical3.png" alt="Divisor" class="w-[600px] my-6 object-contain">
+                        <img src="resources/images/DivisorVertical3.png" alt="Divisor" class="w-full max-w-[600px] sm:max-w-[300px] my-6 object-contain" />
                     </div>
 
                     <!-- Texto -->
-                    <p class="primary-color text-[48px] leading-relaxed letra2 px-4 animar-scroll anim-zoom">
+                    <p class="primary-color text-[48px] sm:text-lg leading-relaxed letra2 px-4 animar-scroll anim-zoom">
                         Captura los momentos más especiales y compártelos con nosotros usando el hashtag:<br>
-                        <span class="text-primary-color font-bold text-[32px]">#BodaEsmeraldaYFrancisco</span>
+                        <span class="text-primary-color font-bold text-[32px] sm:text-base">#BodaEsmeraldaYFrancisco</span>
                     </p>
 
                     <!-- Botón hashtag -->
                     <div class="flex justify-center pt-2 animar-scroll anim-zoom">
-                        <a id="aHashtag" href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition">
+                        <a id="aHashtag" href="#" class="px-14 py-6 sm:px-8 sm:py-3 rounded-full bg-primary-color cursive-letra text-white text-4xl sm:text-base font-bold hover:bg-[#b18979] transition">
                             #EsmeraldaYFrancisco
                         </a>
                     </div>
@@ -624,46 +612,49 @@
                         class="w-screen max-w-5xl mx-auto object-contain pointer-events-none" />
                 </div>
 
-                <section class="text-center space-y-10 max-w-3xl mx-auto pt-24">
+                <section class="text-center space-y-8 max-w-3xl mx-auto pt-24 px-2">
                     <!-- Texto principal -->
-                    <p class="primary-color text-[38px] leading-relaxed letra2 px-4 animar-scroll anim-zoom">
+                    <p class="primary-color text-[38px] sm:text-base leading-relaxed letra2 px-4 animar-scroll anim-zoom">
                         Cada uno de ustedes es parte fundamental de nuestra vida, ya sea como familia o amigos. No podríamos imaginar este día sin su presencia para celebrarlo juntos.
                     </p>
 
                     <!-- Texto pequeño -->
-                    <p class="text-5xl font-semibold primary-color letra1 animar-scroll anim-zoom">¡Los esperamos con todo nuestro corazón!</p>
+                    <p class="text-5xl sm:text-xl font-semibold primary-color letra1 animar-scroll anim-zoom">¡Los esperamos con todo nuestro corazón!</p>
 
                     <!-- Divisor inferior -->
                     <div class="flex justify-center">
-                        <img src="resources/images/DivisorVertical3.png" alt="Divisor decorativo" class="w-[600px] object-contain" />
+                        <img src="resources/images/DivisorVertical3.png" alt="Divisor decorativo" class="w-full max-w-[600px] sm:max-w-[300px] object-contain" />
                     </div>
 
                     <!-- Título -->
-                    <h2 class="text-8xl cursive-letra primary-color">Contacto</h2>
+                    <h2 class="text-8xl sm:text-5xl cursive-letra primary-color">Contacto</h2>
 
                     <!-- Ícono WhatsApp -->
                     <div class="flex justify-center">
-                        <i class="fa-brands fa-whatsapp text-[120px] primary-color"></i>
+                        <i class="fa-brands fa-whatsapp text-[120px] sm:text-[60px] primary-color"></i>
                     </div>
 
                     <!-- Botones de contacto -->
-                    <div class="flex flex-col items-center gap-6 pt-4">
-                        <a id="btnConsultaEsposa" href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom">
+                    <div class="flex flex-col items-center gap-6 pt-4 px-4">
+                        <a id="btnConsultaEsposa" href="#" class="px-14 py-6 sm:px-10 sm:py-3 rounded-full bg-primary-color cursive-letra text-white text-4xl sm:text-base font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom w-full max-w-md text-center">
                             Consultar a Esmeralda
                         </a>
-                        <a id="btnConsultaEsposo" href="#" class="px-20 py-8 rounded-full bg-primary-color cursive-letra text-white text-5xl font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom">
+                        <a id="btnConsultaEsposo" href="#" class="px-14 py-6 sm:px-10 sm:py-3 rounded-full bg-primary-color cursive-letra text-white text-4xl sm:text-base font-bold hover:bg-[#b18979] transition animar-scroll anim-zoom w-full max-w-md text-center">
                             Consultar a Francisco
                         </a>
                     </div>
                 </section>
             </div>
             
-            <div id="Agradecimiento" class="relative h-[600px] bg-cover bg-center flex items-center justify-center" style="background-image: url('resources/images/momentoboda.jpg');">
+            <div id="Agradecimiento" class="relative h-[600px] sm:h-[300px] bg-cover bg-center flex items-center justify-center" style="background-image: url('resources/images/momentoboda.jpg');">
                 <div class="absolute inset-0 bg-blue-900/50"></div>
-                <span class="relative z-10 text-5xl font-semibold text-white animar-scroll anim-slide">Te esperamos</span>
+                <span class="relative z-10 text-5xl sm:text-3xl font-semibold text-white animar-scroll anim-slide px-4 text-center">
+                    Te esperamos
+                </span>
             </div>
-            <footer class="bg-gradient-to-r from-blue-800 to-gray-600 text-white text-lg text-center py-6">
-                <span class="font-medium">Git Hub Pages 2025 · Diseño @JosuedGarm52 </span>
+
+            <footer class="bg-gradient-to-r from-blue-800 to-gray-600 text-white text-lg sm:text-sm text-center py-6 px-4">
+                <span class="font-medium">Git Hub Pages 2025 · Diseño @JosuedGarm52</span>
             </footer>
         </div>
     </div>
@@ -683,9 +674,10 @@
             console.log("✅ Página cargada");
 
             const hostname = window.location.hostname;
+            const esLocal = window.location.protocol === "file:";
 
             // Excluir validación si es entorno local
-            if (hostname === '127.0.0.1' || hostname === 'localhost') {
+            if (hostname === '127.0.0.1' || hostname === 'localhost' || esLocal) {
                 console.warn("⚠️ Modo local detectado. Saltando validación de invitado.");
                 objInvitados = validarInvitado();
                 mostrarConInvitacion();
