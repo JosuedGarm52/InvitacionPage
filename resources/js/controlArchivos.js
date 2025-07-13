@@ -62,8 +62,8 @@ async function actualizarInvitados() {
     if (!response.ok) throw new Error('No se pudo cargar el archivo: ' + response.status);
 
     const base64Texto = await response.text();
-    const cifrado = atob(base64Texto);
-    const textoDesencriptado = xorDecrypt(cifrado, claveSecretaInvitados);
+    //const cifrado = atob(base64Texto);
+    const textoDesencriptado = xorDecrypt(base64Texto, claveSecretaInvitados);
 
     objInvitados = JSON.parse(textoDesencriptado);
     console.log("✅ Invitados actualizados.");
