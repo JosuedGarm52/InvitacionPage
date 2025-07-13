@@ -83,38 +83,48 @@ async function actualizarInvitados() {
 }
 
 async function cargarDatosBoda(isLocal = false) {
-    try {
-      if(isLocal) {
-          datosBodaGlobal = {
-              nameEsposo: "Hector",
-              nameEsposa: "Sara",
-              direccionMapC : "maps.google.com/?q=Dirección+de+la+iglesia",
-              direccionMapS : "maps.google.com/?q=Dirección+de+la+boda",
-              madreNovia: "María Isabel González Martínez",
-              padreNovia: "Carlos Eduardo Fernández López",
-              madreNovio: "Ana Patricia Ruiz Sánchez",
-              padreNovio: "Javier Alberto Morales Díaz",
-              datosBancarios: "https://www.ejemplo.com/datos-bancarios",
-              consultaNovia: "whatsapp.com/1234567890",
-              consultaNovio: "whatsapp.com/0987654321",
-              encuesta: "form.miform.com/viewform?usp=preview",
-              urlEncuestaPrueba: "form.miform.com/viewform?usp=pp_url&entry.1882687068=333",
-              datosBancarios: "data/datos.txt"
-          };
-          console.warn("⚠️ Modo local detectado. Usando datos de boda predeterminados.");
-          return;
-      }
-      const response = await fetch('./data/datosBoda.bbss');
-      if (!response.ok) throw new Error('No se pudo cargar datos de boda');
-
-      const base64Texto = await response.text();
-      // No hacer atob aquí porque xorDecrypt ya lo hace
-      const textoPlano = xorDecrypt(base64Texto, claveSecretaInvitados);
-
-      datosBodaGlobal = JSON.parse(textoPlano);
-      console.log("✅ Datos de boda cargados:", datosBodaGlobal);
-
-    } catch (error) {
-      console.error("❌ Error al cargar datos de boda:", error);
+  try {
+    if (isLocal) {
+      datosBodaGlobal = localDATA; // Usar datos locales para desarrollo
+      console.warn("⚠️ Modo local detectado. Usando datos de boda predeterminados.");
+      return;
     }
+
+    const response = await fetch('./data/datosBoda.bbss');
+    if (!response.ok) throw new Error('No se pudo cargar datos de boda');
+
+    const base64Texto = await response.text();
+    console.log("📄 Contenido raw de datosBoda.bbss:", base64Texto);
+
+    // Verificar que sea base64 válido con regex simple:
+    if (!/^[A-Za-z0-9+/=\s]+$/.test(base64Texto.trim())) {
+      throw new Error("El contenido leído no parece ser base64 válido");
+    }
+
+    const textoPlano = xorDecrypt(base64Texto.trim(), claveSecretaInvitados);
+    console.log("🔓 Texto plano descifrado:", textoPlano);
+
+    datosBodaGlobal = JSON.parse(textoPlano);
+    console.log("✅ Datos de boda cargados:", datosBodaGlobal);
+
+  } catch (error) {
+    console.error("❌ Error al cargar datos de boda:", error);
+  }
 }
+
+const localDATA = datosBodaGlobal = {
+    nameEsposo: "Hector",
+    nameEsposa: "Sara",
+    direccionMapC : "maps.google.com/?q=Dirección+de+la+iglesia",
+    direccionMapS : "maps.google.com/?q=Dirección+de+la+boda",
+    madreNovia: "María Isabel González Martínez",
+    padreNovia: "Carlos Eduardo Fernández López",
+    madreNovio: "Ana Patricia Ruiz Sánchez",
+    padreNovio: "Javier Alberto Morales Díaz",
+    datosBancarios: "https://www.ejemplo.com/datos-bancarios",
+    consultaNovia: "whatsapp.com/1234567890",
+    consultaNovio: "whatsapp.com/0987654321",
+    encuesta: "form.miform.com/viewform?usp=preview",
+    urlEncuestaPrueba: "form.miform.com/viewform?usp=pp_url&entry.1882687068=333",
+    datosBancarios: "data/datos.txt"
+};
