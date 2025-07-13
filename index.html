@@ -522,6 +522,11 @@
                         Confirmar Asistencia
                     </h2>
 
+                    <p id="nombreInvitado"
+                    class="primary-color letra1 font-semibold text-xl sm:text-3xl md:text-5xl lg:text-6xl animar-scroll anim-fade">
+                        Familia Doe
+                    </p>
+
                     <!-- Texto principal -->
                     <p class="primary-color letra2 text-base sm:text-lg md:text-[32px] leading-relaxed px-2 animar-scroll anim-slide">
                         Queremos que disfruten al máximo esta celebración, por lo que hemos decidido que sea un evento solo para adultos.
@@ -864,9 +869,11 @@
         function mostrarUrlEncuesta(datos) {
             //console.log("📦 invitadoActual: " + JSON.stringify(invitadoActual, null, 2));
             const cnumber = invitadoActual?.cnumber || 0;
+            const nombreInvitado = invitadoActual?.nombre || "No Name";
 
             if (cnumber === 0) {
                 console.warn("⚠️ No se encontró cnumber. Usando valor por defecto.");
+                console.log("🔍 Nombre del invitado:", nombreInvitado);
                 return;
             }
 
@@ -875,6 +882,8 @@
             const nuevaURL = urlBase + cnumber;
 
             $("#btnConfirmar").attr("href", nuevaURL);
+
+            $(`#nombreInvitado`).html(nombreInvitado);
         }
     </script>
     <script src="resources/js/AOSObservation.js"></script>
