@@ -649,20 +649,23 @@
     </script>
     <script src="resources/js/AOSObservation.js"></script>
     <script>
-        const swiper = new Swiper(".mySwiper", {
-            loop: true,
-            autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-            },
-            pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            },
-            navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-            },
+        window.addEventListener('load', () => {
+            const swiper = new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 1,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
         });
     </script>
 
