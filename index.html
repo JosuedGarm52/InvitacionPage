@@ -167,44 +167,50 @@
                         <div class="relative z-10 text-center px-6 py-10">
                             <h4 class="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 primary-color letra1">Padres de la Novia</h4>
 
-                            <div class="flex flex-wrap w-full items-center justify-center gap-2">
+                            <div
+                                class="grid grid-cols-4 items-center justify-center gap-2 w-full px-16"
+                                >
                                 <!-- Madre -->
                                 <div
                                     id="nombreMadreNovia"
-                                    class="basis-full sm:basis-5/12 pr-0 sm:pr-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-right leading-tight"
+                                    class="primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-right leading-tight"
                                 >
                                     María<br />Isabel<br />González<br />Martínez
                                 </div>
 
                                 <!-- Divisor -->
-                                <div class="flex-shrink-0 px-2 hidden sm:block">
+                                <div class="flex justify-center">
                                     <img
-                                        src="resources/images/DivisorVertical.png"
-                                        alt="Divisor"
-                                        class="h-20 sm:h-32 w-auto mx-auto"
+                                    src="resources/images/DivisorVertical.png"
+                                    alt="Divisor"
+                                    class="h-20 sm:h-32 w-auto mx-auto"
                                     />
                                 </div>
 
                                 <!-- Padre -->
                                 <div
                                     id="nombrePadreNovia"
-                                    class="basis-full sm:basis-5/12 pl-0 sm:pl-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-left leading-tight"
+                                    class="primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-left leading-tight"
                                 >
                                     Carlos<br />Eduardo<br />Fernández<br />López
                                 </div>
-                                <img
-                                    src="resources/images/CruzDorada.png"
-                                    alt="Cruz dorada en memoria"
-                                    title="En memoria"
-                                    class="mt-1 h-10 sm:h-12 w-10 sm:w-12 opacity-80 -ml-4 mx-auto sm:mx-0"
-                                />
+
+                                <!-- Cruz -->
+                                <div class="flex justify-start sm:justify-start ml-4">
+                                    <img
+                                        src="resources/images/CruzDorada.png"
+                                        alt="Cruz dorada en memoria"
+                                        title="En memoria"
+                                        class="h-12 w-12 opacity-80"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="relative -translate-y-3 mb-2">
-                    <img src="resources/images/figura2.png" alt="Decoración inferior" class="mx-auto w-2/3 h-[140px] object-contain">
+                    <img src="resources/images/figura2.png" alt="Decoración inferior" class="mx-auto w-2/3 h-[140px] object-contain" />
                 </div>
 
                 <!-- Carta Padres Novio -->
@@ -234,19 +240,18 @@
                                     />
                                 </div>
 
-                                <!-- Padre -->
-                                <div
-                                    id="nombrePadreNovio"
-                                    class="basis-full sm:basis-5/12 pl-0 sm:pl-4 primary-color letra1 text-lg sm:text-xl md:text-2xl text-center sm:text-left leading-tight"
-                                >
-                                    Javier<br />Morales<br />Ríos
+                                <!-- Padre + Cruz contenedor -->
+                                <div class="basis-full sm:basis-5/12 pl-0 sm:pl-4 flex items-center justify-center sm:justify-start space-x-2 text-center sm:text-left primary-color letra1 text-lg sm:text-xl md:text-2xl leading-tight">
+                                    <div id="nombrePadreNovio">
+                                        Javier<br />Morales<br />Ríos
+                                    </div>
+                                    <img
+                                        src="resources/images/CruzDorada.png"
+                                        alt="Cruz dorada en memoria"
+                                        title="En memoria"
+                                        class="h-12 w-12 opacity-80"
+                                    />
                                 </div>
-                                <img
-                                    src="resources/images/CruzDorada.png"
-                                    alt="Cruz dorada en memoria"
-                                    title="En memoria"
-                                    class="mt-1 h-10 sm:h-12 w-10 sm:w-12 opacity-80 -ml-4 mx-auto sm:mx-0"
-                                />
                             </div>
                         </div>
                     </div>
