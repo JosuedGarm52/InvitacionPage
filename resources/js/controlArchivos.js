@@ -112,7 +112,7 @@ async function cargarDatosBoda(isLocal = false) {
   }
 }
 
-const localDATA = datosBodaGlobal = {
+const localDATA = {
     nameEsposo: "Hector",
     nameEsposa: "Sara",
     direccionMapC : "maps.google.com/?q=Dirección+de+la+iglesia",
