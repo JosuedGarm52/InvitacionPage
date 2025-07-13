@@ -306,57 +306,95 @@
                 <div style="height: 1cm;" class="bg-blue-900 w-full rounded"></div>
             </div>
 
+            <!-- Carrusel y sección -->
+            <div id="carruselFotos" class="bg-plata-d">
+                <section class="text-center py-10 px-4 pb-0">
+                    <h2 class="text-5xl sm:text-6xl md:text-7xl mb-6 primary-color cursive-letra">
+                    Nuestra Historia
+                    </h2>
+
+                    <!-- Carrusel -->
+                    <div class="swiper mySwiper w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg mb-10">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                        <img src="resources/images/parejaTest1.png" alt="Historia 1" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-md" />
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="resources/images/parejaTest2.png" alt="Historia 2" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-md" />
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="resources/images/parejaTest3.png" alt="Historia 3" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-md" />
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="resources/images/parejaTest4.png" alt="Historia 4" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-md" />
+                        </div>
+                    </div>
+
+                    <!-- Navegación opcional -->
+                    <div class="swiper-button-next text-gray-700"></div>
+                    <div class="swiper-button-prev text-gray-700"></div>
+                    
+                    <!-- Paginación opcional -->
+                    <div class="swiper-pagination"></div>
+                    </div>
+                </section>
+
+                <!-- Línea divisora azul al final del fondo plata -->
+                <div class="bg-blue-900 w-full rounded" style="height: 1cm;"></div>
+            </div>
+
             <!--Seccion de historia e itinerario-->
             <div class="fondo-especial">
                 <div id="ubicacion">
                     <section class="py-12 px-4 text-center">
-                        <div class="max-w-6xl mx-auto grid grid-cols-3 gap-4 items-center sm:grid-cols-1">
+                        <div class="max-w-6xl mx-auto grid grid-cols-3 gap-4 items-center">
                             <!-- Ceremonia -->
                             <div class="flex flex-col items-center space-y-4">
-                                <!-- Imagen circular: en móvil reducimos tamaño -->
-                                <img src="resources/images/iglesia.png" alt="Ceremonia" class="w-84 h-84 sm:w-48 sm:h-48 object-cover rounded-full shadow-md" />
+                                <!-- Imagen circular -->
+                                <img src="resources/images/iglesia.png" alt="Ceremonia" class="w-84 h-84 object-cover rounded-full shadow-md" />
 
-                                <h3 class="text-7xl sm:text-4xl cursive-letra primary-color animar-scroll anim-slide">Ceremonia</h3>
-                                <p class="text-4xl sm:text-xl letra1 primary-color">Iglesia del Espíritu Santo</p>
+                                <h3 class="text-7xl cursive-letra primary-color">Ceremonia</h3>
+                                <p class="text-4xl letra1 primary-color">Iglesia del Espíritu Santo</p>
 
                                 <!-- Hora como cápsula -->
                                 <div class="flex items-center justify-center h-full">
-                                    <span class="px-14 py-4 sm:px-6 sm:py-2 rounded-full border-4 border-primary-color primary-color letra1 text-5xl sm:text-xl font-bold bg-transparent animar-scroll anim-fade">
+                                <span class="px-14 py-4 rounded-full border-4 border-primary-color primary-color letra1 text-5xl font-bold bg-transparent">
                                         4:00 p.m.
                                     </span>
                                 </div>
 
                                 <!-- Botón ubicación -->
                                 <div class="flex items-center justify-center h-full">
-                                    <a id="aIglesia" href="#" class="px-14 py-4 sm:px-6 sm:py-2 rounded-full bg-primary-color cursive-letra text-white text-6xl sm:text-xl font-bold animar-scroll anim-fade">
+                                    <a href="#" class="px-14 py-4 rounded-full bg-primary-color cursive-letra text-white text-6xl font-bold">
                                         Ubicación
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Divisor vertical: ocultar en móvil -->
-                            <div class="flex justify-center sm:hidden">
-                                <img src="resources/images/DivisorVertical2.png" alt="Divisor" class="h-full max-h-72" />
+                            <!-- Divisor vertical -->
+                            <div class="flex justify-center">
+                            <img src="resources/images/DivisorVertical2.png" alt="Divisor" class="h-full max-h-72" />
                             </div>
 
                             <!-- Celebración -->
                             <div class="flex flex-col items-center space-y-4">
-                                <!-- Imagen circular: en móvil reducimos tamaño -->
-                                <img src="resources/images/brindis5.png" alt="Celebración" class="w-84 h-84 sm:w-48 sm:h-48 object-cover rounded-full shadow-md" />
+                                <!-- Imagen circular -->
+                                <img src="resources/images/brindis5.png" alt="Celebración" class="w-84 h-84 object-cover rounded-full shadow-md" />
 
-                                <h3 class="text-7xl sm:text-4xl cursive-letra primary-color animar-scroll anim-slide">Celebración</h3>
-                                <p class="text-4xl sm:text-xl letra1 primary-color">Salón Jardín Cristal</p>
+                                <h3 class="text-7xl cursive-letra primary-color">Celebración</h3>
+                                <p class="text-4xl letra1 primary-color">Salón Jardín Cristal</p>
 
                                 <!-- Hora como cápsula -->
                                 <div class="flex items-center justify-center h-full">
-                                    <span class="px-14 py-4 sm:px-6 sm:py-2 rounded-full border-4 border-primary-color primary-color letra1 text-5xl sm:text-xl font-bold bg-transparent animar-scroll anim-fade">
+                                    <span class="px-14 py-4 rounded-full border-4 border-primary-color primary-color letra1 text-5xl font-bold bg-transparent">
                                         8:00 p.m.
                                     </span>
                                 </div>
 
                                 <!-- Botón ubicación -->
                                 <div class="flex items-center justify-center h-full">
-                                    <a id="aSalon" href="#" class="px-14 py-4 sm:px-6 sm:py-2 rounded-full bg-primary-color cursive-letra text-white text-6xl sm:text-xl font-bold animar-scroll anim-fade">
+                                    <a href="#" class="px-14 py-4 rounded-full bg-primary-color cursive-letra text-white text-6xl font-bold">
                                         Ubicación
                                     </a>
                                 </div>
@@ -373,66 +411,72 @@
 
                 <div id="Itinerario">
                     <section class="py-12 px-4 mb-0">
-                        <h2 class="text-center text-6xl md:text-7xl cursive-letra primary-color mb-8 animar-scroll anim-slide">Itinerario</h2>
+                        <h2 class="text-center text-6xl md:text-7xl cursive-letra primary-color mb-8">Itinerario</h2>
 
                         <div class="max-w-4xl mx-auto space-y-10 relative">
-                            <!-- Línea vertical central: ocultar en móvil -->
-                            <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-secondary-color z-0 hidden sm:block"></div>
+                            <!-- Línea vertical central (solo una vez, detrás de todo) -->
+                            <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-secondary-color z-0"></div>
 
                             <!-- 🔹 Evento -->
-                            <div class="grid grid-cols-[1fr_0.5fr_1fr] sm:grid-cols-1 sm:gap-y-4 items-center relative z-10">
+                            <div class="grid grid-cols-[1fr_0.5fr_1fr] items-center relative z-10">
                                 <!-- Imagen más cerca del centro -->
-                                <div class="flex justify-end pr-1 sm:justify-center">
-                                    <img src="resources/images/icons8-iglesia-100.png" alt="Iglesia" class="w-28 h-28 sm:w-16 sm:h-16 object-cover" />
+                                <div class="flex justify-end pr-1">
+                                    <img src="resources/images/icons8-iglesia-100.png" alt="Iglesia" class="w-28 h-28 object-cover" />
                                 </div>
 
-                                <!-- Rombos: ocultar en móvil o reducir tamaño -->
-                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10 sm:hidden">
+                                <!-- Rombos -->
+                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10">
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                 </div>
 
                                 <!-- Texto más cerca del centro -->
-                                <div class="flex flex-col justify-center items-start pl-1 text-left sm:pl-0 sm:items-center sm:text-center">
-                                    <h4 class="text-3xl font-bold primary-color letra1 sm:text-xl">Iglesia</h4>
-                                    <p class="text-3xl primary-color letra1 sm:text-base">4:00 p.m.</p>
+                                <div class="flex flex-col justify-center items-start pl-1 text-left">
+                                    <h4 class="text-3xl font-bold primary-color letra1">Iglesia</h4>
+                                    <p class="text-3xl primary-color letra1">4:00 p.m.</p>
                                 </div>
                             </div>
 
                             <!-- 🔹 Evento -->
-                            <div class="grid grid-cols-[1fr_0.5fr_1fr] sm:grid-cols-1 sm:gap-y-4 items-center relative z-10">
-                                <div class="flex justify-end pr-1 sm:justify-center">
-                                    <img src="resources/images/icons8-champagne-100.png" alt="Ceremonia" class="w-28 h-28 sm:w-16 sm:h-16 object-cover" />
+                            <div class="grid grid-cols-[1fr_0.5fr_1fr] items-center relative z-10">
+                                <!-- Imagen más cerca del centro -->
+                                <div class="flex justify-end pr-1">
+                                    <img src="resources/images/icons8-champagne-100.png" alt="Ceremonia" class="w-28 h-28 object-cover" />
                                 </div>
 
-                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10 sm:hidden">
+                                <!-- Rombos -->
+                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10">
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                 </div>
 
-                                <div class="flex flex-col justify-center items-start pl-1 text-left sm:pl-0 sm:items-center sm:text-center">
-                                    <h4 class="text-3xl font-bold primary-color letra1 sm:text-xl">Ceremonia</h4>
-                                    <p class="text-3xl primary-color letra1 sm:text-base">8:00 p.m.</p>
+                                <!-- Texto más cerca del centro -->
+                                <div class="flex flex-col justify-center items-start pl-1 text-left">
+                                    <h4 class="text-3xl font-bold primary-color letra1">Ceremonia</h4>
+                                    <p class="text-3xl primary-color letra1">8:00 p.m.</p>
                                 </div>
                             </div>
 
                             <!-- 🔹 Evento -->
-                            <div class="grid grid-cols-[1fr_0.5fr_1fr] sm:grid-cols-1 sm:gap-y-4 items-center relative z-10">
-                                <div class="flex justify-end pr-1 sm:justify-center">
-                                    <img src="resources/images/icons8-danza-100.png" alt="Baile" class="w-28 h-28 sm:w-16 sm:h-16 object-cover" />
+                            <div class="grid grid-cols-[1fr_0.5fr_1fr] items-center relative z-10">
+                                <!-- Imagen más cerca del centro -->
+                                <div class="flex justify-end pr-1">
+                                    <img src="resources/images/icons8-danza-100.png" alt="Baile" class="w-28 h-28 object-cover" />
                                 </div>
 
-                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10 sm:hidden">
+                                <!-- Rombos -->
+                                <div class="flex flex-col items-center justify-center h-28 gap-y-1 relative z-10">
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                     <div class="w-4 h-4 bg-secondary-color rotate-45"></div>
                                 </div>
 
-                                <div class="flex flex-col justify-center items-start pl-1 text-left sm:pl-0 sm:items-center sm:text-center">
-                                    <h4 class="text-3xl font-bold primary-color letra1 sm:text-xl">Baile</h4>
-                                    <p class="text-3xl primary-color letra1 sm:text-base">10:00 p.m.</p>
+                                <!-- Texto más cerca del centro -->
+                                <div class="flex flex-col justify-center items-start pl-1 text-left">
+                                    <h4 class="text-3xl font-bold primary-color letra1">Baile</h4>
+                                    <p class="text-3xl primary-color letra1">10:00 p.m.</p>
                                 </div>
                             </div>
 
