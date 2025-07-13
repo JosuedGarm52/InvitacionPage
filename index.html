@@ -827,8 +827,8 @@
             $("#nombreEsposo").text(datos.nameEsposo);
             const btnHash = $("#aHashtag");
             btnHash.text(`#${datos.nameEsposa} y ${datos.nameEsposo}`);
-            const btnConsultaEsposa = $("btnConsultaEsposa");
-            const btnConsultaEsposo = $("btnConsultaEsposo");
+            const btnConsultaEsposa = $("#btnConsultaEsposa");
+            const btnConsultaEsposo = $("#btnConsultaEsposo");
             btnConsultaEsposa.attr("href", datos.consultaNovia);
             btnConsultaEsposo.attr("href", datos.consultaNovio);
             btnConsultaEsposa.text(`Consultar a ${datos.nameEsposa}`);
