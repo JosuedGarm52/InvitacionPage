@@ -915,7 +915,6 @@
         }
 
         function mostrarUrlEncuesta(datos) {
-            //console.log("📦 invitadoActual: " + JSON.stringify(invitadoActual, null, 2));
             const cnumber = invitadoActual?.cnumber || 0;
             const nombreInvitado = invitadoActual?.nombre || "No Name";
 
@@ -925,12 +924,16 @@
                 return;
             }
 
-            // Reemplazar los últimos 3 dígitos del parámetro con el nuevo cnumber
-            const urlBase = datos.urlEncuestaPrueba.replace(/(\d{3})$/, '');
-            const nuevaURL = urlBase + cnumber;
+            const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLScgCzVUHIRQ9fW0-tTlfcVJoY6djpJFE_NEkuEcCQeWqrI3NQ/viewform";
+
+            const params = new URLSearchParams({
+                usp: "pp_url",
+                "entry.1882687068": cnumber
+            });
+
+            const nuevaURL = `${baseUrl}?${params.toString()}`;
 
             $("#btnConfirmar").attr("href", nuevaURL);
-
             $(`#nombreInvitado`).html(nombreInvitado);
         }
     </script>
