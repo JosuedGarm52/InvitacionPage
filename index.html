@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INVITACION</title>
+    <style>
+        /* Fondo oscuro semi-transparente que cubre toda la pantalla */
+        #spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-family: Arial, sans-serif;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        /* Spinner circular simple */
+        .spinner {
+            border: 6px solid #ccc;
+            border-top: 6px solid #333;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: girar 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes girar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
     <link rel="icon" href="./resources/images/invitacion.png" type="image/png">
     <link rel="stylesheet" href="./resources/css/index.css">
     <link
@@ -802,7 +837,7 @@
             await actualizarInvitados();
 
             const invitado = validarInvitado();
-            console.log("🔍 Invitado encontrado:", invitado);
+            //console.log("🔍 Invitado encontrado:", invitado);
 
             if (invitado) {
                 mostrarConInvitacion();
@@ -831,7 +866,7 @@
 
 
         function cambiarNombresEsposos(datos){
-            console.log("🔍 Datos de boda:", datos);
+            //console.log("🔍 Datos de boda:", datos);
             if (datos.nameEsposa === "" || datos.nameEsposo === "") {
                 console.warn("⚠️ Nombres de esposos no definidos. No se actualizarán los nombres.");
                 return;

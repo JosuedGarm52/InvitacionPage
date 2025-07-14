@@ -91,10 +91,10 @@ async function cargarDatosBoda(isLocal = false) {
     }
 
     const textoPlano = xorDecrypt(base64Texto.trim(), claveSecretaInvitados);
-    console.log("🔓 Texto plano descifrado:", textoPlano);
+    //console.log("🔓 Texto plano descifrado:", textoPlano);
 
     datosBodaGlobal = JSON.parse(textoPlano);
-    console.log("✅ Datos de boda cargados:", datosBodaGlobal);
+    //console.log("✅ Datos de boda cargados:", datosBodaGlobal);
 
   } catch (error) {
     console.error("❌ Error al cargar datos de boda:", error);
