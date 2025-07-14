@@ -826,6 +826,7 @@
 
             if (hostname === '127.0.0.1' || hostname === 'localhost' || esLocal) {
                 console.warn("⚠️ Modo local detectado. Saltando validación de invitado.");
+                invitadoActual = null; 
                 objInvitados = validarInvitado();
                 mostrarConInvitacion();
                 await cargarDatosBoda(true);
