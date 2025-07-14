@@ -62,21 +62,10 @@ async function actualizarInvitados() {
     if (!response.ok) throw new Error('No se pudo cargar el archivo: ' + response.status);
 
     const base64Texto = await response.text();
-    //const cifrado = atob(base64Texto);
     const textoDesencriptado = xorDecrypt(base64Texto, claveSecretaInvitados);
 
     objInvitados = JSON.parse(textoDesencriptado);
     console.log("✅ Invitados actualizados.");
-
-    const invitado = validarInvitado();
-    if (invitado) {
-      console.log("🎉 Invitado válido encontrado tras actualización:", invitado);
-      mostrarConInvitacion();
-    } else {
-      console.warn("❌ No se encontró invitado tras actualización.");
-      mostrarSinInvitacion();
-    }
-
   } catch (error) {
     console.error('❌ Error al actualizar invitados:', error);
   }
@@ -94,7 +83,7 @@ async function cargarDatosBoda(isLocal = false) {
     if (!response.ok) throw new Error('No se pudo cargar datos de boda');
 
     const base64Texto = await response.text();
-    console.log("📄 Contenido raw de datosBoda.bbss:", base64Texto);
+    //console.log("📄 Contenido raw de datosBoda.bbss:", base64Texto);
 
     // Verificar que sea base64 válido con regex simple:
     if (!/^[A-Za-z0-9+/=\s]+$/.test(base64Texto.trim())) {

@@ -785,23 +785,16 @@
             const hostname = window.location.hostname;
             const esLocal = window.location.protocol === "file:";
 
-            // Excluir validación si es entorno local
             if (hostname === '127.0.0.1' || hostname === 'localhost' || esLocal) {
                 console.warn("⚠️ Modo local detectado. Saltando validación de invitado.");
                 objInvitados = validarInvitado();
                 mostrarConInvitacion();
-                await cargarDatosBoda(true); // Aun en local puedes cargar datos de boda si lo deseas
-                console.log("Datos boda (local):", datosBodaGlobal);
-                cambiarNombresEsposos(datosBodaGlobal);
-                cambiarNombresPadres(datosBodaGlobal);
-                cambiarUbicaciones(datosBodaGlobal);
-                mostrarUrlEncuesta(datosBodaGlobal);
-                cambiarDatosBancarios(datosBodaGlobal);
+                await cargarDatosBoda(true);
+                aplicarDatosBoda();
                 return;
             }
 
-            await actualizarInvitados(); // Espera invitados
-            console.log("📦 Invitados cargados:", objInvitados);
+            await actualizarInvitados();
 
             const invitado = validarInvitado();
             console.log("🔍 Invitado encontrado:", invitado);
@@ -812,13 +805,18 @@
                 mostrarSinInvitacion();
             }
 
-            await cargarDatosBoda(); // Cargar datos de boda al final
-            cambiarNombresEsposos(datosBodaGlobal);
-            cambiarNombresPadres(datosBodaGlobal);
-            cambiarUbicaciones(datosBodaGlobal);
-            mostrarUrlEncuesta(datosBodaGlobal);
-            cambiarDatosBancarios(datosBodaGlobal);
+            await cargarDatosBoda();
+            aplicarDatosBoda(); // función que agrupe los cambios visuales
         };
+
+        function inicializarBoda(datos) {
+            cambiarNombresEsposos(datos);
+            cambiarNombresPadres(datos);
+            cambiarUbicaciones(datos);
+            mostrarUrlEncuesta(datos);
+            cambiarDatosBancarios(datos);
+        }
+
 
         function cambiarNombresEsposos(datos){
             if (datos.nameEsposa === "" || datos.nameEsposo === "") {
