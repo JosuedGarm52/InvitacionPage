@@ -794,8 +794,8 @@
                 objInvitados = validarInvitado();
                 mostrarConInvitacion();
                 await cargarDatosBoda(true);
-                inicializarBoda();
-                $('#spinner-overlay').css('display', 'none');
+                inicializarBoda(datosBodaGlobal);
+                ocultarSpinner();
                 return;
             }
 
@@ -811,9 +811,15 @@
             }
 
             await cargarDatosBoda();
-            inicializarBoda(); // función que agrupe los cambios visuales
-            $('#spinner-overlay').css('display', 'none');
+            inicializarBoda(datosBodaGlobal); // función que agrupe los cambios visuales
+            ocultarSpinner();
         };
+
+        function ocultarSpinner() {
+            document.getElementById('spinner-overlay').style.display = 'none';
+            $('#spinner-overlay').hide();
+            $('#spinner-overlay').css('display', 'none');
+        }
 
         function inicializarBoda(datos) {
             cambiarNombresEsposos(datos);
@@ -825,6 +831,7 @@
 
 
         function cambiarNombresEsposos(datos){
+            console.log("🔍 Datos de boda:", datos);
             if (datos.nameEsposa === "" || datos.nameEsposo === "") {
                 console.warn("⚠️ Nombres de esposos no definidos. No se actualizarán los nombres.");
                 return;
