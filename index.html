@@ -23,6 +23,10 @@
 </head>
 <body>
     <div class="contenedor">
+        <div id="spinner-overlay">
+            <div class="spinner"></div>
+            Cargando...
+        </div>
         <div id="sin-invitacion" class="d-none" style="text-align: center;">
             <h2 class="text-danger">😕 ¡Ups!</h2>
             <p>No parece que tengas una invitación válida.</p>
@@ -790,7 +794,8 @@
                 objInvitados = validarInvitado();
                 mostrarConInvitacion();
                 await cargarDatosBoda(true);
-                aplicarDatosBoda();
+                inicializarBoda();
+                $('#spinner-overlay').css('display', 'none');
                 return;
             }
 
@@ -806,7 +811,8 @@
             }
 
             await cargarDatosBoda();
-            aplicarDatosBoda(); // función que agrupe los cambios visuales
+            inicializarBoda(); // función que agrupe los cambios visuales
+            $('#spinner-overlay').css('display', 'none');
         };
 
         function inicializarBoda(datos) {
