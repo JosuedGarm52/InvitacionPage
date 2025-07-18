@@ -898,6 +898,7 @@
             $("#nombreEsposo").text(datos.nameEsposo);
             const btnHash = $("#aHashtag");
             btnHash.text(`#${datos.nameEsposa} y ${datos.nameEsposo}`);
+            btnHash.attr("href", `https://www.instagram.com/explore/search/keyword/?q=%23${datos.nameEsposa}y${datos.nameEsposo}`);
             const btnConsultaEsposa = $("#btnConsultaEsposa");
             const btnConsultaEsposo = $("#btnConsultaEsposo");
             btnConsultaEsposa.attr("href", datos.consultaNovia);
