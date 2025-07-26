@@ -941,6 +941,7 @@
         function mostrarUrlEncuesta(datos) {
             const cnumber = invitadoActual?.cnumber || 0;
             const nombreInvitado = invitadoActual?.nombre || "No Name";
+            $(`#nombreInvitado`).addClass('hidden');
 
             if (cnumber === 0) {
                 console.warn("⚠️ No se encontró cnumber. Usando valor por defecto.");
