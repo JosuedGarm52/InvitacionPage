@@ -543,3 +543,7 @@ body {
 .green{
   color: rgb(0, 128, 0);
 }
+
+#scrollToggleBtn {
+  z-index: 99999 !important;
+}
