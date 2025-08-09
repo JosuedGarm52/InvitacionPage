@@ -67,52 +67,61 @@
             <p>No parece que tengas una invitación válida.</p>
             <p>Por favor, contacta a los organizadores para obtener acceso.</p>
         </div>
-        <!-- Botón de audio sticky -->
-        <div class="fixed top-4 right-4 z-50 group sm:top-6 sm:right-6 md:top-8 md:right-8">
-            <!-- Botón principal -->
+        <!-- Botón de audio + Botón de scroll sticky -->
+        <div class="fixed top-4 right-4 z-50 flex items-center gap-2 sm:top-6 sm:right-6 md:top-8 md:right-8">
+            
+            <!-- Botón de scroll automático -->
             <button
-                onclick="toggleMute()"
-                class="bg-pink-600 hover:bg-pink-700 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg"
-                aria-label="Control de audio"
+                id="scrollToggleBtn"
+                onclick="toggleAutoScroll()"
+                class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg"
+                aria-label="Scroll automático"
             >
-                <i id="main-audio-icon" class="fas fa-volume-up text-lg sm:text-xl"></i>
+                <i id="scroll-icon" class="fas fa-square text-lg sm:text-xl"></i>
             </button>
 
-            <!-- Menú flotante al hacer hover -->
-            <div
-                class="absolute right-full top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white border rounded-lg p-2 sm:p-3 shadow-xl space-y-2 sm:space-y-3 w-32 sm:w-36 text-sm sm:text-base"
-                style="min-width: 140px;"
-            >
+            <!-- Botón de audio con menú -->
+            <div class="relative group">
                 <button
-                onclick="toggleMute()"
-                class="block w-full text-gray-700 hover:text-pink-600 flex items-center gap-2"
-                type="button"
+                    onclick="toggleMute()"
+                    class="bg-pink-600 hover:bg-pink-700 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg"
+                    aria-label="Control de audio"
                 >
-                <i class="fas fa-volume-mute"></i> Mutear
+                    <i id="main-audio-icon" class="fas fa-volume-up text-lg sm:text-xl"></i>
                 </button>
-                <button
-                onclick="togglePlayPause()"
-                class="block w-full text-gray-700 hover:text-pink-600 flex items-center gap-2"
-                type="button"
+
+                <!-- Menú flotante -->
+                <div
+                    class="absolute right-full top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white border rounded-lg p-2 sm:p-3 shadow-xl space-y-2 sm:space-y-3 w-32 sm:w-36 text-sm sm:text-base"
+                    style="min-width: 140px;"
                 >
-                <i class="fas fa-play"></i> Play/Pausa
-                </button>
-                <!-- Control de volumen -->
-                <div class="text-gray-700">
-                <label for="volume-slider" class="block mb-1">Volumen</label>
-                <input
-                    id="volume-slider"
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    value="0.5"
-                    class="w-full accent-pink-600"
-                    aria-valuemin="0"
-                    aria-valuemax="1"
-                    aria-valuenow="0.5"
-                    aria-label="Control de volumen"
-                />
+                    <button
+                        onclick="toggleMute()"
+                        class="block w-full text-gray-700 hover:text-pink-600 flex items-center gap-2"
+                        type="button"
+                    >
+                        <i class="fas fa-volume-mute"></i> Mutear
+                    </button>
+                    <button
+                        onclick="togglePlayPause()"
+                        class="block w-full text-gray-700 hover:text-pink-600 flex items-center gap-2"
+                        type="button"
+                    >
+                        <i class="fas fa-play"></i> Play/Pausa
+                    </button>
+                    <!-- Control de volumen -->
+                    <div class="text-gray-700">
+                        <label for="volume-slider" class="block mb-1">Volumen</label>
+                        <input
+                            id="volume-slider"
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.01"
+                            value="0.5"
+                            class="w-full accent-pink-600"
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -846,6 +855,7 @@
     <script src="./resources/js/controlArchivos.js"></script>
     <script src="./resources/js/main.js"></script>
     <script src="./resources/js/controlAudio.js"></script>
+    <script src="./resources/js/controlScroll.js"></script>
     <script>
         window.onload = async () => {
             console.log("✅ Página cargada");
