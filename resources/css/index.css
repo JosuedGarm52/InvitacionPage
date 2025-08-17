@@ -96,7 +96,7 @@ body {
 }
 
 .fondo-especial {
-  background-image: url('../images/fondoMarmol.jpg'); /* Cambia la ruta */
+  background-image: url('../images/fondo93717.jpg'); /* Cambia la ruta */
   background-size: cover;       /* Ajusta para cubrir el div completo */
   background-position: center;  /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repeticiones */
@@ -116,6 +116,10 @@ body {
 
 .bg-oro {
   background: linear-gradient(135deg, #bfa76a 60%, #fffbe6 100%);
+}
+
+.letra-pequeña{
+  color: #575757ff;
 }
 
 .bg-plata-d {
