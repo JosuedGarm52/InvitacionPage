@@ -118,6 +118,10 @@ body {
   background: linear-gradient(135deg, #bfa76a 60%, #fffbe6 100%);
 }
 
+.color-oro {
+  color: linear-gradient(135deg, #bfa76a 60%, #fffbe6 100%);
+}
+
 .letra-pequeña{
   color: #575757ff;
 }
@@ -550,4 +554,12 @@ body {
 
 #scrollToggleBtn {
   z-index: 99999 !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  background: linear-gradient(135deg, #bfa76a 60%, #fffbe6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem; /* ajusta tamaño */
 }
